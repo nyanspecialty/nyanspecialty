@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nyanspecialty.campass.web.services", "nyanspecialty.campass.web.services\nyanspecialty.campass.web.services.csproj", "{2AC694C7-CE62-4FC3-BFB6-337D76C82DEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AC694C7-CE62-4FC3-BFB6-337D76C82DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC694C7-CE62-4FC3-BFB6-337D76C82DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC694C7-CE62-4FC3-BFB6-337D76C82DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC694C7-CE62-4FC3-BFB6-337D76C82DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB8B43D5-2999-41FD-AF11-FE08B670C4BF}
+	EndGlobalSection
+EndGlobal

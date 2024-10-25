@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Data.DBConfiguration\NyanSpecialty.Assistance.Web.Data.DBConfiguration.csproj" />
+    <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Data.Manager\NyanSpecialty.Assistance.Web.Data.Manager.csproj" />
+    <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Data.Utility\NyanSpecialty.Assistance.Web.Data.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

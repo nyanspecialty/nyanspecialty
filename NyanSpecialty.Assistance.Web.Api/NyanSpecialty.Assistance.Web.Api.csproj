@@ -11,9 +11,12 @@
     <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.20.1" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http.AspNetCore" Version="1.2.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.16.4" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.21.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="1.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -28,6 +31,8 @@
     <Using Include="System.Threading.ExecutionContext" Alias="ExecutionContext" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Functions\" />
+    <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Data.DBConfiguration\NyanSpecialty.Assistance.Web.Data.DBConfiguration.csproj" />
+    <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Data.Manager\NyanSpecialty.Assistance.Web.Data.Manager.csproj" />
+    <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Manager\NyanSpecialty.Assistance.Web.Manager.csproj" />
   </ItemGroup>
 </Project>

@@ -9,10 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Data.Manager", "NyanSpecialty.Assistance.Web.Data.Manager\NyanSpecialty.Assistance.Web.Data.Manager.csproj", "{FA030620-9AE7-449E-AD24-CED78DFFB63F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Data.Interface", "NyanSpecialty.Assistance.Web.Data.Interface\NyanSpecialty.Assistance.Web.Data.Interface.csproj", "{A3701E13-5B4F-4FC3-A892-BFCA57002451}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Data.Dapper", "NyanSpecialty.Assistance.Web.Data.Dapper\NyanSpecialty.Assistance.Web.Data.Dapper.csproj", "{6346F623-25BF-438B-B966-229E8C71814A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Models", "NyanSpecialty.Assistance.Web.Models\NyanSpecialty.Assistance.Web.Models.csproj", "{40645005-B7E3-4AC5-B217-C57E5417A06D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Api.Tests", "NyanSpecialty.Assistance.Web.Api.Tests\NyanSpecialty.Assistance.Web.Api.Tests.csproj", "{87A3E57C-1B14-45BB-BBF6-C1059D5787B1}"
@@ -22,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Data.Constants", "NyanSpecialty.Assistance.Web.Data.Constants\NyanSpecialty.Assistance.Web.Data.Constants.csproj", "{79DB8AA8-37B4-4F1A-9F74-AEB0139C71FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Data.Utility", "NyanSpecialty.Assistance.Web.Data.Utility\NyanSpecialty.Assistance.Web.Data.Utility.csproj", "{D36CB5E3-FB67-4330-BEC7-58722ACE6626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Data.DBConfiguration", "NyanSpecialty.Assistance.Web.Data.DBConfiguration\NyanSpecialty.Assistance.Web.Data.DBConfiguration.csproj", "{D319F362-5D46-45C3-9BAA-735A2B7F7323}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,14 +39,6 @@ Global
 		{FA030620-9AE7-449E-AD24-CED78DFFB63F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA030620-9AE7-449E-AD24-CED78DFFB63F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA030620-9AE7-449E-AD24-CED78DFFB63F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3701E13-5B4F-4FC3-A892-BFCA57002451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3701E13-5B4F-4FC3-A892-BFCA57002451}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3701E13-5B4F-4FC3-A892-BFCA57002451}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3701E13-5B4F-4FC3-A892-BFCA57002451}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6346F623-25BF-438B-B966-229E8C71814A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6346F623-25BF-438B-B966-229E8C71814A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6346F623-25BF-438B-B966-229E8C71814A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6346F623-25BF-438B-B966-229E8C71814A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{40645005-B7E3-4AC5-B217-C57E5417A06D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{40645005-B7E3-4AC5-B217-C57E5417A06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40645005-B7E3-4AC5-B217-C57E5417A06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -71,6 +61,10 @@ Global
 		{D36CB5E3-FB67-4330-BEC7-58722ACE6626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D36CB5E3-FB67-4330-BEC7-58722ACE6626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D36CB5E3-FB67-4330-BEC7-58722ACE6626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D319F362-5D46-45C3-9BAA-735A2B7F7323}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D319F362-5D46-45C3-9BAA-735A2B7F7323}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D319F362-5D46-45C3-9BAA-735A2B7F7323}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D319F362-5D46-45C3-9BAA-735A2B7F7323}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

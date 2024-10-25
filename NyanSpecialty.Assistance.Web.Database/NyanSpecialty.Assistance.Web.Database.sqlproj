@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{790caa2a-332b-41bf-b766-bdc4d25a5290}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -60,5 +60,18 @@
     <Folder Include="nyanspecialty\Post-Deployment" />
     <Folder Include="nyanspecialty\Pre-Deployment" />
     <Folder Include="nyanspecialty\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="nyanspecialty\Tables\PolicyType.sql" />
+    <Build Include="nyanspecialty\Tables\PolicyCategory.sql" />
+    <Build Include="nyanspecialty\Tables\VehicleSize.sql" />
+    <Build Include="nyanspecialty\Tables\VehicleClass.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="nyanspecialty\Post-Deployment\Script.PostDeployment.sql" />
+    <None Include="nyanspecialty\Post-Deployment\SeedPolicyType.sql" />
+    <None Include="nyanspecialty\Post-Deployment\SeedPolicyCategory.sql" />
+    <None Include="nyanspecialty\Post-Deployment\SeedVehicleSize.sql" />
+    <None Include="nyanspecialty\Post-Deployment\SeedVehicleClass.sql" />
   </ItemGroup>
 </Project>

@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NyanSpecialty.Assistance.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NyanSpecialty.Assistance.Web.Data.Utility", "NyanSpecialty.Assistance.Web.Data.Utility\NyanSpecialty.Assistance.Web.Data.Utility.csproj", "{D36CB5E3-FB67-4330-BEC7-58722ACE6626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Data.DBConfiguration", "NyanSpecialty.Assistance.Web.Data.DBConfiguration\NyanSpecialty.Assistance.Web.Data.DBConfiguration.csproj", "{D319F362-5D46-45C3-9BAA-735A2B7F7323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NyanSpecialty.Assistance.Web.Data.DBConfiguration", "NyanSpecialty.Assistance.Web.Data.DBConfiguration\NyanSpecialty.Assistance.Web.Data.DBConfiguration.csproj", "{D319F362-5D46-45C3-9BAA-735A2B7F7323}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

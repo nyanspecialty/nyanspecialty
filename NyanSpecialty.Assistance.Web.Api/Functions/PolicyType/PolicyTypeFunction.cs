@@ -6,6 +6,7 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
     public partial class PolicyTypeFunction
     {
         private IPolicyTypeDataManager _policyTypeDataManager;
+
         private readonly ILogger<PolicyTypeFunction> _logger;
 
         public PolicyTypeFunction(ILogger<PolicyTypeFunction> logger, IPolicyTypeDataManager policyTypeDataManager)
@@ -13,7 +14,6 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
             _logger = logger;
             _policyTypeDataManager = policyTypeDataManager; 
         }
-
-       
+               
     }
 }

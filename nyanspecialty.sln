@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NyanSpecialty.Assistance.We
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NyanSpecialty.Assistance.Web.Data.Utility", "NyanSpecialty.Assistance.Web.Data.Utility\NyanSpecialty.Assistance.Web.Data.Utility.csproj", "{D36CB5E3-FB67-4330-BEC7-58722ACE6626}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Data.DBConfiguration", "NyanSpecialty.Assistance.Web.Data.DBConfiguration\NyanSpecialty.Assistance.Web.Data.DBConfiguration.csproj", "{D319F362-5D46-45C3-9BAA-735A2B7F7323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NyanSpecialty.Assistance.Web.Data.DBConfiguration", "NyanSpecialty.Assistance.Web.Data.DBConfiguration\NyanSpecialty.Assistance.Web.Data.DBConfiguration.csproj", "{D319F362-5D46-45C3-9BAA-735A2B7F7323}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NyanSpecialty.Assistance.Web.Api", "NyanSpecialty.Assistance.Web.Api\NyanSpecialty.Assistance.Web.Api.csproj", "{C067D6A6-C965-47E7-AA4B-1A1562550D5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{D319F362-5D46-45C3-9BAA-735A2B7F7323}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D319F362-5D46-45C3-9BAA-735A2B7F7323}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D319F362-5D46-45C3-9BAA-735A2B7F7323}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C067D6A6-C965-47E7-AA4B-1A1562550D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C067D6A6-C965-47E7-AA4B-1A1562550D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C067D6A6-C965-47E7-AA4B-1A1562550D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C067D6A6-C965-47E7-AA4B-1A1562550D5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

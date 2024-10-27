@@ -10,4 +10,4 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 -- Include seed data for Aminity
-:r .\SeedPolicyType.sql
+--:r .\SeedPolicyType.sql

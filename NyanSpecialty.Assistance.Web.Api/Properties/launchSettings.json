@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "NyanSpecialty.Assistance.Web.Api": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7014",
+      "launchBrowser": false
+    }
+  }
+}

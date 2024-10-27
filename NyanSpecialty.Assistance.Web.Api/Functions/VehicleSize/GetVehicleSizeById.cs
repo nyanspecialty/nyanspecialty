@@ -1,24 +1,22 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
-
 
 namespace NyanSpecialty.Assistance.Web.Api.Functions
 {
     public partial class VehicleSizeFunctions
     {
 
-        [Function("GetVehicleSizes")]
-        public async Task<IActionResult> GetVehicleSizes([HttpTrigger(AuthorizationLevel.Function, 
-            "get", Route = "vehiclesize/getvehiclesizes")]  HttpRequestData req)
+        [Function("GetVehicleSizeById")]
+        public async Task<IActionResult> GetVehicleSizeById([HttpTrigger(AuthorizationLevel.Function, "get", Route = "vehiclesize/getvehiclesizebyid/{vehiclesizeid}")]
+        HttpRequest req,  long vehiclesizeid)
         {
-            _logger.LogInformation("VehicleSizeFunctions.GetVehicleSizes Invoked.");
+            _logger.LogInformation("VehicleSizeFunctions.GetVehicleSizeById Invoked.");
 
             try
             {
-                var response = await _vehicleSizeDataManager.GetAllVehicleSizeAsync();
+                var response = await _vehicleSizeDataManager.GetVehicleSizeAsync(vehiclesizeid);
                 return new OkObjectResult(response);
             }
             catch (Exception ex)

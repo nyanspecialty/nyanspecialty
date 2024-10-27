@@ -20,17 +20,17 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
             try
             {
                 if (req.Body == null)
-                    return new BadRequestObjectResult("alid vehicleclass object NOT provided");
+                    return new BadRequestObjectResult("valid vehicleclass object NOT provided");
 
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
 
                 if(string.IsNullOrEmpty(requestBody))
-                    return new BadRequestObjectResult("alid vehicleclass object NOT provided");
+                    return new BadRequestObjectResult("valid vehicleclass object NOT provided");
 
                 var vehicleCass = JsonConvert.DeserializeObject<VehicleClass>(requestBody);
 
                 if (vehicleCass == null)
-                    return new BadRequestObjectResult("alid vehicleclass object NOT provided");
+                    return new BadRequestObjectResult("valid vehicleclass object NOT provided");
 
                 var response = await _vehicleClassDataManager.InsertOrUpdateVehicleClassAsync(vehicleCass);
                 return new OkObjectResult(response);

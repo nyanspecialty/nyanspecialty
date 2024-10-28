@@ -67,6 +67,11 @@
     <Build Include="nyanspecialty\Tables\VehicleSize.sql" />
     <Build Include="nyanspecialty\Tables\VehicleClass.sql" />
     <Build Include="nyanspecialty\Tables\InsurancePolicy.sql" />
+    <Build Include="nyanspecialty\Tables\Customers.sql" />
+    <Build Include="nyanspecialty\Tables\Role.sql" />
+    <Build Include="nyanspecialty\Tables\User.sql" />
+    <Build Include="nyanspecialty\Tables\ServiceProvider.sql" />
+    <Build Include="nyanspecialty\Tables\ServiceType.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="nyanspecialty\Post-Deployment\Script.PostDeployment.sql" />
@@ -74,5 +79,7 @@
     <None Include="nyanspecialty\Post-Deployment\SeedPolicyCategory.sql" />
     <None Include="nyanspecialty\Post-Deployment\SeedVehicleSize.sql" />
     <None Include="nyanspecialty\Post-Deployment\SeedVehicleClass.sql" />
+    <None Include="nyanspecialty\Post-Deployment\SeedServiceType.sql" />
+    <None Include="nyanspecialty\Post-Deployment\SeedRole.sql" />
   </ItemGroup>
 </Project>

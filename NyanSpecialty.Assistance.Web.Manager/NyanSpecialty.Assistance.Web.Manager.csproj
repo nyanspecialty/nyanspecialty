@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EFCore.BulkExtensions" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Data.DBConfiguration\NyanSpecialty.Assistance.Web.Data.DBConfiguration.csproj" />
     <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Data.Manager\NyanSpecialty.Assistance.Web.Data.Manager.csproj" />
     <ProjectReference Include="..\NyanSpecialty.Assistance.Web.Data.Utility\NyanSpecialty.Assistance.Web.Data.Utility.csproj" />

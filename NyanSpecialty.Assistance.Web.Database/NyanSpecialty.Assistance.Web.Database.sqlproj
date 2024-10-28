@@ -66,6 +66,7 @@
     <Build Include="nyanspecialty\Tables\PolicyCategory.sql" />
     <Build Include="nyanspecialty\Tables\VehicleSize.sql" />
     <Build Include="nyanspecialty\Tables\VehicleClass.sql" />
+    <Build Include="nyanspecialty\Tables\InsurancePolicy.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="nyanspecialty\Post-Deployment\Script.PostDeployment.sql" />

@@ -17,5 +17,6 @@ namespace NyanSpecialty.Assistance.Web.Data.DBConfiguration
         public DbSet<PolicyType> policyTypes { get; set; }
         public DbSet<PolicyCategory> policyCategories { get; set; }
         public DbSet<VehicleClass> vehicleClasses { get; set; }
+        public DbSet<InsurancePolicy> insurancePolicies { get; set; }
     }
 }

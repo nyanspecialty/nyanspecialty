@@ -22,7 +22,7 @@ import { TogglePasswordDirective } from './directives/toggle-password.directive'
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule 
   ],
   providers: [AuthenticateService, RepositoryFactory, TokenService],
   bootstrap: [AppComponent]

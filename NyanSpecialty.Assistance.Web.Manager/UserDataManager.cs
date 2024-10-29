@@ -41,7 +41,7 @@ namespace NyanSpecialty.Assistance.Web.Manager
                         dbUser.LastPasswordChangedOn = userRegistration.LastPasswordChangedOn;
                         dbUser.ModifiedBy = userRegistration.ModifiedBy;
                         dbUser.ModifiedOn = DateTimeOffset.UtcNow; // Set to current time
-                        dbUser.IsActive = userRegistration.IsActive
+                        dbUser.IsActive = userRegistration.IsActive;
                         await _dbContext.SaveChangesAsync();
                     }
                     return dbUser;

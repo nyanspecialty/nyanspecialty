@@ -30175,3 +30175,13 @@ new-task label input[type=checkbox] {
 }
 
 /**====== user card css end ======**/
+.toast-top-right {
+  top: 12px;  /* Adjust top position */
+  right: 12px; /* Adjust right position */
+}
+
+.toast {
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+}

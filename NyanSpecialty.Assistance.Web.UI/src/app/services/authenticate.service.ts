@@ -6,11 +6,11 @@ import { RepositoryFactory } from '../factory/repositoryfactory.service';
   providedIn: 'root'
 })
 export class AuthenticateService {
-  constructor(private repositoryFactory: RepositoryFactory) { } 
+  constructor(private repositoryFactory: RepositoryFactory) { }
 
   authenticateUser(userData: any): Observable<any> {
     const url = "/Account/AuthenticateUserAsync";
-    return this.repositoryFactory.sendAsync('POST', url, userData); 
+    return this.repositoryFactory.sendAsync('POST', url, userData);
   }
 
   generateUserClaims(authResponse: any): Observable<any> {

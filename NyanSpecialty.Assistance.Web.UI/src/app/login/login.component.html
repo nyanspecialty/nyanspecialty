@@ -2,7 +2,7 @@
 <div class="auth-wrapper">
     <div class="auth-content text-center">
       <img src="assets/images/logo.png" alt="" class="img-fluid mb-4">
-      <form id="formAuthentication" class="mb-3" (ngSubmit)="onLogin()">
+      <form id="formAuthentication" class="mb-3" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
         <div class="card borderless">
           <div class="row align-items-center ">
             <div class="col-md-12">

@@ -2,7 +2,7 @@
 // environment.ts (Development environment)
 export const environment = {
     production: false,
-    coreApiUrl: 'http://localhost:7014/api/',
+    coreApiUrl: 'http://localhost:7014/api',
     UrlConstants: {
         Authenticate: 'useraccess/authenticate',
         VerifyAccesToken: 'useraccess/verifyaccestoken',

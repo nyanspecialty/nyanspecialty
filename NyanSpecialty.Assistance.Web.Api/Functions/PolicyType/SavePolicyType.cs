@@ -24,7 +24,7 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
 
                 if (string.IsNullOrEmpty(requestBody))
-                    return new BadRequestObjectResult("alid policytype object NOT provided");
+                    return new BadRequestObjectResult("valid policytype object NOT provided");
 
                 var policyType = JsonConvert.DeserializeObject<PolicyType>(requestBody);
 

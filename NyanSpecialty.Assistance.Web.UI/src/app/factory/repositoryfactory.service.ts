@@ -5,7 +5,6 @@ import { catchError, filter, map } from 'rxjs/operators';
 import { environment } from '../environment';
 import { TokenService } from './token.service';
 
-
 export interface IRepositoryFactory {
   sendAsync<TResponse>(method: string, uri: string, body?: any): Observable<TResponse>;
 }
@@ -22,12 +21,13 @@ export class RepositoryFactory implements IRepositoryFactory {
   }
 
   sendAsync<TResponse>(method: string, uri: string, body?: any): Observable<TResponse> {
-    const fullUrl = `${this.baseUrl}${uri}`; 
+    const fullUrl = `${this.baseUrl}${uri}`;
+
     const request = this.createRequest(method, fullUrl, body);
-    
+
     return this.httpClient.request<TResponse>(request).pipe(
-      filter((event): event is HttpResponse<TResponse> => event instanceof HttpResponse), // Filter to ensure we're dealing with HttpResponse
-      map((response: HttpResponse<TResponse>) => response.body as TResponse), // Map to AmplifyResponse
+      filter((event): event is HttpResponse<TResponse> => event instanceof HttpResponse),
+      map((response: HttpResponse<TResponse>) => response.body as TResponse),
       catchError((error: any) => throwError(error))
     );
   }

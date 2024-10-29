@@ -12,6 +12,7 @@ namespace NyanSpecialty.Assistance.Web.Data.DBConfiguration
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
         }
         public DbSet<VehicleSize> vehicleSizes { get; set; }
         public DbSet<PolicyType> policyTypes { get; set; }

@@ -26,5 +26,6 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
         }
+
     }
 }

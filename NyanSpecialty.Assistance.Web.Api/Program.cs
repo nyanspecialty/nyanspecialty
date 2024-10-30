@@ -23,7 +23,8 @@ var host = new HostBuilder()
         services.AddSingleton<IVehicleClassDataManager, VehicleClassDataManager>();
         services.AddSingleton<IPolicyTypeDataManager, PolicyTypeDataManager>();
         services.AddSingleton<IInsurancePolicyDataManager, InsurancePolicyDataManager>();
-        services.AddSingleton<IUserDataManager, UserDataManager>()
+        services.AddSingleton<IUserDataManager, UserDataManager>();
+        services.AddSingleton<IAuthenticationDataManager, AuthenticationDataManager>();
 ;
     })
     .Build();

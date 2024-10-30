@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Customers]
 (
-    [CustomerID]              BIGINT            NOT NULL PRIMARY KEY IDENTITY(1,1),  -- Unique identifier for each customer
+    [CustomerId]              BIGINT            NOT NULL PRIMARY KEY IDENTITY(1,1),  -- Unique identifier for each customer
     [Name]                    VARCHAR(100)      NOT NULL,                           -- Customer's name
     [ContactNumber]           VARCHAR(20)       NOT NULL,                           -- Customer's contact number
     [Email]                   VARCHAR(100)      NOT NULL,                    -- Customer's email address (unique)

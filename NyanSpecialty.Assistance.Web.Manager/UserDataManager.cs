@@ -1,4 +1,5 @@
-﻿using NyanSpecialty.Assistance.Web.Data.DBConfiguration;
+﻿using Microsoft.EntityFrameworkCore;
+using NyanSpecialty.Assistance.Web.Data.DBConfiguration;
 using NyanSpecialty.Assistance.Web.Data.Utility;
 using NyanSpecialty.Assistance.Web.Models;
 
@@ -11,14 +12,45 @@ namespace NyanSpecialty.Assistance.Web.Manager
         {
             _dbContext = dbContext;
         }
-        public Task<IEnumerable<UserInfirmation>> FetchUsersAsync()
+        public async Task<IEnumerable<UserInfirmation>> FetchUsersAsync()
         {
-            throw new NotImplementedException();
+            var users = (from userRegistration in _dbContext.users.Where(x => x.IsActive)
+                         select new UserInfirmation
+                         {
+                             FirstName = userRegistration.FirstName,
+                             LastName = userRegistration.LastName,
+                             Email = userRegistration.Email,
+                             Phone = userRegistration.Phone,
+                             RoleId = userRegistration.RoleId,
+                             CustomerId = userRegistration.CustomerId,
+                             ProviderId = userRegistration.ProviderId,
+                             IsBlocked = userRegistration.IsBlocked,
+                             LastPasswordChangedOn = userRegistration.LastPasswordChangedOn,
+                             CreatedBy = userRegistration.CreatedBy,
+                             CreatedOn = userRegistration.CreatedOn,
+                             IsActive = userRegistration.IsActive
+                         }).ToList();
+
+            return users;
         }
 
-        public Task<ApplicationUser> GetCurrentUserAsync(string email)
+        public async Task<ApplicationUser> GetCurrentUserAsync(string username)
         {
-            throw new NotImplementedException();
+            ApplicationUser applicationUser = new ApplicationUser();
+
+            var userRegistration = await _dbContext.users.Where(x => x.Email.ToLower().Trim() == username.ToLower().Trim() || x.Phone == username).FirstOrDefaultAsync();
+            
+            if (userRegistration != null)
+            {
+                applicationUser.FirstName = userRegistration.FirstName;
+                applicationUser.LastName = userRegistration.LastName;
+                applicationUser.Email = userRegistration.Email;
+                applicationUser.Phone = userRegistration.Phone;
+                applicationUser.RoleId = userRegistration.RoleId;
+                applicationUser.CustomerId = userRegistration.CustomerId; 
+                applicationUser.ProviderId = userRegistration.ProviderId; 
+            }
+            return applicationUser;
         }
 
         public async Task<User> InsertOrUpdateUserAsync(UserRegistration userRegistration)
@@ -35,12 +67,12 @@ namespace NyanSpecialty.Assistance.Web.Manager
                         dbUser.Email = userRegistration.Email;
                         dbUser.Phone = userRegistration.Phone;
                         dbUser.RoleId = userRegistration.RoleId;
-                        dbUser.CustomerId = userRegistration.CustomerId; // Ensure this matches your class definition
-                        dbUser.ProviderId = userRegistration.ProviderId; // Ensure this matches your class definition
+                        dbUser.CustomerId = userRegistration.CustomerId;
+                        dbUser.ProviderId = userRegistration.ProviderId; 
                         dbUser.IsBlocked = userRegistration.IsBlocked;
                         dbUser.LastPasswordChangedOn = userRegistration.LastPasswordChangedOn;
                         dbUser.ModifiedBy = userRegistration.ModifiedBy;
-                        dbUser.ModifiedOn = DateTimeOffset.UtcNow; // Set to current time
+                        dbUser.ModifiedOn = DateTimeOffset.UtcNow; 
                         dbUser.IsActive = userRegistration.IsActive;
                         await _dbContext.SaveChangesAsync();
                     }

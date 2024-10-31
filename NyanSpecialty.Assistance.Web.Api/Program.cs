@@ -25,7 +25,16 @@ var host = new HostBuilder()
         services.AddSingleton<IInsurancePolicyDataManager, InsurancePolicyDataManager>();
         services.AddSingleton<IUserDataManager, UserDataManager>();
         services.AddSingleton<IAuthenticationDataManager, AuthenticationDataManager>();
-;
+
+        // Add CORS policy to allow requests from Angular app
+        services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(builder =>
+                builder.WithOrigins("http://localhost:4200") // Angular app URL
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+            );
+        });
     })
     .Build();
 

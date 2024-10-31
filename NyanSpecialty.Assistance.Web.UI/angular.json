@@ -28,7 +28,6 @@
               }
             ],
             "styles": [
-              "src/style.css",
               "src/assets/css/style.css",
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/@swimlane/ngx-datatable/index.css"

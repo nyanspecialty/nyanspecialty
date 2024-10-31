@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoaderService } from './services/loader.service';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { PolicyTypeService } from './services/policytype.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
       preventDuplicates: true,
     }),
   ],
-  providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService],
+  providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService,PolicyTypeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

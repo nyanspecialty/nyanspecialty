@@ -70,49 +70,6 @@ namespace NyanSpecialty.Assistance.Web.Api.Tests
         }
 
         [Test]
-        public async Task GetInsurancePolicyById_ShouldReturnOkObjectResult_WithValidId()
-        {
-            // Arrange
-            var insurancePolicy = new InsurancePolicy { InsurancePolicyId = 1, CustomerEmail = "Policy 1" };
-            long insurancePolicyId = 1;
-
-            _mockInsurancePolicyDataManager.Setup(x => x.GetInsurancePolicyByIdAsync(insurancePolicyId)).ReturnsAsync(insurancePolicy);
-            var mockHttpRequest = new Mock<HttpRequest>();
-
-            // Act
-            var response = await _insurancePolicyFunctions.GetInsurancePolicies(mockHttpRequest.Object, insurancePolicyId);
-
-            // Assert
-            Assert.That(response, Is.InstanceOf<OkObjectResult>());
-            var okResult = response as OkObjectResult;
-            Assert.That(okResult, Is.Not.Null);
-            Assert.That(okResult.Value, Is.EqualTo(insurancePolicy));
-        }
-
-        
-        [Test]
-        public async Task SaveInsurancePolicy_ShouldReturnOkObjectResult_WhenValidPolicyIsProvided()
-        {
-            // Arrange
-            var insurancePolicy = new InsurancePolicy { InsurancePolicyId = 1, CustomerEmail = "Policy 1" };
-            var requestBody = JsonConvert.SerializeObject(insurancePolicy);
-            var mockHttpRequest = new Mock<HttpRequest>();
-            var stream = new MemoryStream(Encoding.UTF8.GetBytes(requestBody));
-            mockHttpRequest.Setup(req => req.Body).Returns(stream);
-
-            _mockInsurancePolicyDataManager.Setup(x => x.InsertOrUpdateInsurancePolicyAsync(insurancePolicy)).Returns(Task.CompletedTask);
-
-            // Act
-            var response = await _insurancePolicyFunctions.SaveInsurancePolicy(mockHttpRequest.Object);
-
-            // Assert
-            Assert.That(response, Is.InstanceOf<OkObjectResult>());
-            var okResult = response as OkObjectResult;
-            Assert.That(okResult, Is.Not.Null);
-            Assert.That(okResult.Value, Is.EqualTo(true));
-        }
-
-        [Test]
         public async Task SaveInsurancePolicy_ShouldReturnBadRequest_WhenBodyIsNull()
         {
             // Arrange

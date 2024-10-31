@@ -36,23 +36,53 @@
                 </div>
             </div>
             <div class="card-body card-body-padding">
-
-                <ngx-datatable class="bootstrap" [rows]="rows" [columnMode]="'force'" [headerHeight]="50"
-                    [footerHeight]="50" [rowHeight]="40" 
+                <ngx-datatable class="bootstrap datatable-container" 
+                    [rows]="rows"
+                    [columnMode]="'force'"
+                    [headerHeight]="50"
                     [scrollbarV]="true">
 
-                    <ngx-datatable-column name="Name" prop="product_name">
+                    <ngx-datatable-column name="Name" prop="Name">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.product_name }}
+                            {{ row.Name }}
                         </ng-template>
                     </ngx-datatable-column>
 
-                    <ngx-datatable-column name="Code" prop="product_code">
+                    <ngx-datatable-column name="Code" prop="Code">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.product_code }}
+                            {{ row.Code }}
                         </ng-template>
                     </ngx-datatable-column>
 
+                    <ngx-datatable-column name="CreatedBy" prop="CreatedBy">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            {{ row.CreatedBy }}
+                        </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="CreatedOn" prop="CreatedOn">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            {{ row.CreatedOn }}
+                        </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="ModifiedBy" prop="ModifiedBy">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            {{ row.ModifiedBy }}
+                        </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="ModifiedOn" prop="ModifiedOn">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            {{ row.ModifiedOn }}
+                        </ng-template>
+                    </ngx-datatable-column>
+
+                    <ngx-datatable-column name="IsActive" prop="IsActive">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            {{ row.IsActive }}
+                        </ng-template>
+                    </ngx-datatable-column>
                 </ngx-datatable>
             </div>
         </div>

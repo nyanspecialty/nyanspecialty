@@ -9,7 +9,8 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
 
         private readonly ILogger<PolicyTypeFunction> _logger;
 
-        public PolicyTypeFunction(ILogger<PolicyTypeFunction> logger, IPolicyTypeDataManager policyTypeDataManager)
+        public PolicyTypeFunction(ILogger<PolicyTypeFunction> logger,
+            IPolicyTypeDataManager policyTypeDataManager)
         {
             _logger = logger;
             _policyTypeDataManager = policyTypeDataManager; 

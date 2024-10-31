@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { LoaderService } from './services/loader.service';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
   ],
   imports: [
     BrowserModule,
+    NgxDatatableModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

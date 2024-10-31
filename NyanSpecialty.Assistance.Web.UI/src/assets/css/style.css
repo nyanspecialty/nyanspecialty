@@ -18162,7 +18162,7 @@ strong {
 
 .page-header {
     background: transparent;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 .page-header h5 {
@@ -21576,7 +21576,7 @@ pre[class*=language-]:before {
 .pcoded-content {
     position: relative;
     display: block;
-    padding: 25px;
+    padding: 10px;
 }
 
 .pcoded-main-container {
@@ -30195,4 +30195,10 @@ new-task label input[type=checkbox] {
   padding: 16px;
   border-radius: 4px;
   font-size: 1rem;
+}
+/* policytype.component.css */
+
+.datatable-container {
+  height: 500px; /* Adjust as needed */
+  overflow: auto; /* Enable scrolling */
 }

@@ -2,7 +2,7 @@
 // environment.ts (Development environment)
 export const environment = {
     production: false,
-    coreApiUrl: 'http://localhost:7014/api',
+    coreApiUrl: 'http://localhost:7014/api/',
     UrlConstants: {
         Authenticate: 'useraccess/authenticate',
         VerifyAccesToken: 'useraccess/verifyaccestoken',
@@ -13,7 +13,7 @@ export const environment = {
         GetInsurancePolicyById: 'insurancepolicy/getinsurancepolicy/{insurancepolicyid}',
         GetPolicyCategories: 'policycategory/getpolicycategories',
         GetPolicyCategoryById: 'policycategory/getpolicycategoriesbyid',
-        GetPolicyTypeById: 'policytype/getpolicytypebyid/{policytypeid}',
+        GetPolicyTypeById: 'policytype/getpolicytypebyid',
         GetPolicyTypes: 'policytype/getpolicytypes',
         GetVehicleClassById: 'vehicleclass/getvehicleclassbyid/{vehicleClassId}',
         GetVehicleClasses: 'vehicleclass/getvehicleclasses',

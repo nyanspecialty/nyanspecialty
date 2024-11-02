@@ -36,54 +36,51 @@
                 </div>
             </div>
             <div class="card-body card-body-padding">
-                <ngx-datatable class="bootstrap datatable-container" 
-                    [rows]="rows"
-                    [columnMode]="'force'"
-                    [headerHeight]="50"
-                    [scrollbarV]="true">
-
-                    <ngx-datatable-column name="Name" prop="Name">
+                <ngx-datatable class="bootstrap datatable-container bordered-datatable" [rows]="rows"
+                    [columnMode]="'force'" [rowHeight]="50" [headerHeight]="50" [scrollbarV]="true">
+                    <ngx-datatable-column [width]="5" [sortable]="false">
+                        <ng-template ngx-datatable-header-template>
+                            <div class="checkbox-container">
+                                <input type="checkbox" [checked]="isAllChecked()" (change)="toggleAll($event)" />
+                            </div>
+                        </ng-template>
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.Name }}
+                            <div class="checkbox-container">
+                                <input type="checkbox" [(ngModel)]="row.isChecked" (change)="onRowCheckboxChange()" />
+                            </div>
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="Name" prop="name">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            {{ row.name }}
                         </ng-template>
                     </ngx-datatable-column>
 
-                    <ngx-datatable-column name="Code" prop="Code">
+                    <ngx-datatable-column name="Code" prop="code">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.Code }}
+                            {{ row.code }}
+                        </ng-template>
+                    </ngx-datatable-column>
+                    <ngx-datatable-column name="CreatedOn" prop="createdOn">
+                        <ng-template let-row="row" ngx-datatable-cell-template>
+                            {{ row.createdOn | date }}
                         </ng-template>
                     </ngx-datatable-column>
 
-                    <ngx-datatable-column name="CreatedBy" prop="CreatedBy">
+                    <ngx-datatable-column name="ModifiedOn" prop="modifiedOn">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.CreatedBy }}
+                            {{ row.modifiedOn | date}}
                         </ng-template>
                     </ngx-datatable-column>
 
-                    <ngx-datatable-column name="CreatedOn" prop="CreatedOn">
+                    <ngx-datatable-column name="Active" prop="isActive">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.CreatedOn }}
-                        </ng-template>
-                    </ngx-datatable-column>
-
-                    <ngx-datatable-column name="ModifiedBy" prop="ModifiedBy">
-                        <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.ModifiedBy }}
-                        </ng-template>
-                    </ngx-datatable-column>
-
-                    <ngx-datatable-column name="ModifiedOn" prop="ModifiedOn">
-                        <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.ModifiedOn }}
-                        </ng-template>
-                    </ngx-datatable-column>
-
-                    <ngx-datatable-column name="IsActive" prop="IsActive">
-                        <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.IsActive }}
+                            {{ row.isActive ? 'Yes' : 'No' }}
                         </ng-template>
                     </ngx-datatable-column>
                 </ngx-datatable>
+
+
             </div>
         </div>
 

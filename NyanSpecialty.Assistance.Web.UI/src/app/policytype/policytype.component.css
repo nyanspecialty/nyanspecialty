@@ -1,4 +1,65 @@
 .datatable-container {
     height: 500px; /* Set the desired height */
     overflow: auto; /* Ensure scrolling if content exceeds height */
+    border: 1px solid #ddd;
   }
+/* Style for the datatable container */
+.datatable-container {
+    border: 1px solid #ddd; /* Outer border for the table */
+}
+
+/* Style for the header */
+.datatable-container .datatable-header {
+    background-color: #f7f7f7; /* Header background color */
+    border-bottom: 2px solid #ccc; /* Bottom border for header */
+}
+
+/* Style for each header cell */
+.datatable-container .datatable-header-cell {
+    border-right: 1px solid #ddd; /* Right border for each header cell */
+}
+
+/* Remove the right border for the last header cell */
+.datatable-container .datatable-header-cell:last-child {
+    border-right: none; /* No right border for the last header cell */
+}
+
+/* Style for each body cell */
+.datatable-container .datatable-body-cell {
+    border: 1px solid #ddd; /* Border for each body cell */
+}
+
+/* Remove the bottom border for the last row's cells */
+.datatable-container .datatable-body-row:last-child .datatable-body-cell {
+    border-bottom: none; /* No bottom border for the last row's cells */
+}
+
+/* Optional: Style for hover effect */
+.datatable-container .datatable-body-row:hover {
+    background-color: #f1f1f1; /* Background color on hover */
+}
+
+/* Optional: Style for active rows */
+.datatable-container .datatable-body-row.active {
+    background-color: #e0e0e0; /* Background color for active row */
+}
+
+.filter-row {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+    background-color: #f1f1f1;
+  }
+  
+  .filter-row input, .filter-row select {
+    width: 100%;
+    max-width: 150px;
+    padding: 4px;
+    font-size: 14px;
+  }
+  .checkbox-container {
+    display: flex;               /* Use flexbox */
+    justify-content: center;     /* Center horizontally */
+    align-items: center;         /* Center vertically */
+    height: 100%;                /* Ensure it takes full height of the cell */
+}

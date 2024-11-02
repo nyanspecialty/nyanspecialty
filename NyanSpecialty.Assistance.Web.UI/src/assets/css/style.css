@@ -30202,3 +30202,24 @@ new-task label input[type=checkbox] {
   height: 500px; /* Adjust as needed */
   overflow: auto; /* Enable scrolling */
 }
+.bordered-datatable .ngx-datatable {
+    border-collapse: collapse; /* Ensures borders are collapsed */
+}
+
+.bordered-datatable .ngx-datatable .ngx-datatable-header-cell,
+.bordered-datatable .ngx-datatable .ngx-datatable-body-cell {
+    border: 1px solid #ddd; /* Border for cells */
+    padding: 8px; /* Padding inside cells */
+}
+
+.bordered-datatable .ngx-datatable-header-cell {
+    background-color: #f1f1f1; /* Background color for header */
+}
+
+.bordered-datatable .ngx-datatable-body-row {
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.bordered-datatable .ngx-datatable-body-row:hover {
+    background-color: #f9f9f9; /* Change background on hover */
+}

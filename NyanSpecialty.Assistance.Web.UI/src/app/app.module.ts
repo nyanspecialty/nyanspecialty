@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,7 @@ import { LoaderService } from './services/loader.service';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { PolicyTypeService } from './services/policytype.service';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PolicyTypeService } from './services/policytype.service';
     BrowserModule,
     NgxDatatableModule,
     FormsModule,
+    CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule, 
@@ -35,6 +37,7 @@ import { PolicyTypeService } from './services/policytype.service';
       preventDuplicates: true,
     }),
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService,PolicyTypeService],
   bootstrap: [AppComponent]
 })

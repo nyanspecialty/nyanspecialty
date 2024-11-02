@@ -5,6 +5,7 @@ export interface PolicyType {
     createdBy?: number;
     createdOn?: string;
     modifiedBy?: number;
-    modifiedOn?: string; 
+    modifiedOn?: string;
     isActive: boolean;
+    isChecked?: boolean;
 };

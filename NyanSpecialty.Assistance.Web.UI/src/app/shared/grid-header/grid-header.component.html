@@ -1,0 +1,30 @@
+<div class="card-header card-header-padding">
+    <div class="float-left">
+        <span id="addBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="add()">
+            <i class="fa fa-plus-circle add-plus-class" title="add"></i>
+        </span>
+        <span id="editBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="edit()">
+            <i class="fa fa-pen edit-pen-class" title="edit"></i>
+        </span>
+        <span id="deleteBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="delete()">
+            <i class="fa fa-trash delete-trash-class" title="delete"></i>
+        </span>
+        <span id="copyBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="copy()">
+            <i class="fa fa-plus-square copy-square-class" title="copy"></i>
+        </span>
+       
+    </div>
+    <div class="float-right">
+        <span id="importBtn" class="custom-cursor padding-rigt padding-botom curosor-point" (click)="import()">
+            <i class="fa fa-upload import-class" title="import"></i>
+        </span>
+        <span id="exportBtn" class=" custom-cursor padding-botom curosor-point" data-toggle="dropdown">
+            <i class="fa fa-download export-class" title="export"></i>
+        </span>
+        <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item curosor-point" href="#" id="exportTemplate" (click)="exportTemplate()">Export Template</a>
+            <a class="dropdown-item curosor-point" href="#" id="exportWithGridData" (click)="exportWithGridData()">Export with Grid Data</a>
+            <a class="dropdown-item curosor-point" href="#" id="exportWithOriginalData" (click)="exportWithOriginalData()">Export with Original Data</a>
+        </div>
+    </div>
+</div>

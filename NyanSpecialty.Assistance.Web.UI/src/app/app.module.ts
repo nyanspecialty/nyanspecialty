@@ -15,13 +15,22 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { PolicyTypeService } from './services/policytype.service';
 import { CommonModule } from '@angular/common';
+import { GridHeaderComponent } from './shared/grid-header/grid-header.component';
+import { SiteHeaderComponent } from './shared/site-header/site-header.component';
+import { SiteSideBarComponent } from './shared/site-side-bar/site-side-bar.component';
+import { AddEditPolicyTypeComponent } from './policytype/addeditpolicytype.component';
+import { PolicyTypeModule } from './policytype/policytype.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     TogglePasswordDirective ,
-    SpinnerComponent
+    SpinnerComponent,
+    GridHeaderComponent,
+    SiteHeaderComponent,
+    SiteSideBarComponent,
+    AddEditPolicyTypeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +45,7 @@ import { CommonModule } from '@angular/common';
       timeOut: 3000, 
       preventDuplicates: true,
     }),
+    // PolicyTypeModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService,PolicyTypeService],

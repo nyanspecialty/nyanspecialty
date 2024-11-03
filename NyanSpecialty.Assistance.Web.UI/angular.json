@@ -30,6 +30,7 @@
             "styles": [
               "src/assets/css/style.css",
               "src/assets/css/sidebar.css",
+              "src/assets/css/data-table.css",
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/@swimlane/ngx-datatable/index.css",
               "node_modules/@swimlane/ngx-datatable/themes/material.scss",

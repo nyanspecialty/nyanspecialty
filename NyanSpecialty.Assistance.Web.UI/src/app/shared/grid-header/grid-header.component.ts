@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'grid-header',
@@ -16,7 +16,7 @@ export class GridHeaderComponent {
   @Output() exportTemplateClicked = new EventEmitter<void>();
   @Output() exportWithGridDataClicked = new EventEmitter<void>();
   @Output() exportWithOriginalDataClicked = new EventEmitter<void>();
-
+  @Input() isItemSelected: boolean = false;
   add() {
       this.addClicked.emit();
   }

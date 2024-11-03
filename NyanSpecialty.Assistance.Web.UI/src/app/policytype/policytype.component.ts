@@ -22,12 +22,24 @@ import { AddEditPolicyTypeComponent } from './addeditpolicytype.component';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class PolicytypeComponent implements OnInit {
+
   rows: PolicyType[] = [];
+
   filteredRows: PolicyType[] = [];
+
   filters: any = {};
+
   headerCheckboxChecked: boolean = false;
+
   newPolicyType: PolicyType = {} as PolicyType;
+
   @ViewChild(AddEditPolicyTypeComponent) addEditPolicyTypeComponent!: AddEditPolicyTypeComponent;
+
+  selectedPolicyType: PolicyType = {} as PolicyType;
+
+  selectedItems: any[] = [];
+
+  isItemSelected: boolean = false;
 
   constructor(private policyTypeService: PolicyTypeService, private loader: LoaderService) { }
 
@@ -47,15 +59,31 @@ export class PolicytypeComponent implements OnInit {
   toggleAll(event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;
     this.rows.forEach(row => row.isChecked = isChecked);
+    if(isChecked){
+      this.selectedItems=this.rows;
+    }else{
+      this.selectedItems = [];
+    }
   }
 
-  onRowCheckboxChange() {
+  onRowCheckboxChange(row: any, event: any) {
     const allChecked = this.rows.every(row => row.isChecked);
     const anyUnchecked = this.rows.some(row => !row.isChecked);
     if (allChecked) {
       this.headerCheckboxChecked = true;
     } else if (anyUnchecked) {
       this.headerCheckboxChecked = false;
+    }
+    if (row.isChecked) {
+      this.selectedPolicyType = row;
+      this.isItemSelected = true;
+      const multiplePolicyTypes: PolicyType[] = [];
+      multiplePolicyTypes.push(row);
+      this.addOrUpdatePolicyTypes(multiplePolicyTypes);
+    } else {
+      this.isItemSelected = false;
+      this.selectedPolicyType = {} as PolicyType;
+      this.selectedItems = this.selectedItems.filter(item => item.policyTypeId !== row.policyTypeId);
     }
   }
 
@@ -101,5 +129,28 @@ export class PolicytypeComponent implements OnInit {
   onExportWithOriginalData() {
     console.log('Export with Original Data button clicked in GridHeader');
     // Implement your logic here
+  }
+  handlePolicyTypeChange(policyType: PolicyType) {
+    console.log('Received policy type from child:', policyType);
+    policyType.createdBy = 1;
+    policyType.createdOn = new Date();
+    policyType.modifiedBy = 1;
+    policyType.modifiedOn = new Date();
+    policyType.isActive = true;
+
+    this.policyTypeService.insertOrUpdatePolicyTypeAsync(policyType).subscribe(response => {
+      this.fetchPolicyTypesAsync();
+    });
+  }
+
+  addOrUpdatePolicyTypes(items: PolicyType[]): void {
+    items.forEach(item => {
+      const index = this.selectedItems.findIndex(existingItem => existingItem.policyTypeId === item.policyTypeId);
+      if (index !== -1) {
+        this.selectedItems[index] = { ...this.selectedItems[index], ...item };
+      } else {
+        this.selectedItems.push(item);
+      }
+    });
   }
 }

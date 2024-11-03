@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PolicyType } from '../models/policytype';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -11,12 +11,16 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./addeditpolicytype.component.css']
 })
 export class AddEditPolicyTypeComponent implements OnInit {
+
   @Input() policyType: PolicyType = {} as PolicyType; 
+
+  @Output() policyTypeChange = new EventEmitter<PolicyType>();
+  
   isSidebarVisible = false;
 
   ngOnInit() {
     if (!this.policyType) {
-      this.policyType = { policyTypeId: 0, name: '', code: '', createdOn: '', modifiedOn: '', isActive: true };
+      this.policyType = { policyTypeId: 0, name: '', code: '', createdOn: new Date(), modifiedOn: new Date(), isActive: true };
     }
   }
 
@@ -36,10 +40,11 @@ export class AddEditPolicyTypeComponent implements OnInit {
     this.resetForm();
   }
   resetForm() {
-    this.policyType = { policyTypeId: 0, name: '', code: '', createdOn: '', modifiedOn: '', isActive: true };
+    this.policyType = { policyTypeId: 0, name: '', code: '', createdOn: new Date(), modifiedOn: new Date(), isActive: true };
   }
   onSubmit() {
     console.log('Form submitted', this.policyType);
+    this.policyTypeChange.emit(this.policyType);
     this.closeSidebar();
   }
 }

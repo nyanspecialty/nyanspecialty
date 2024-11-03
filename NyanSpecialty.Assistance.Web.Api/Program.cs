@@ -25,6 +25,7 @@ var host = new HostBuilder()
         services.AddSingleton<IInsurancePolicyDataManager, InsurancePolicyDataManager>();
         services.AddSingleton<IUserDataManager, UserDataManager>();
         services.AddSingleton<IAuthenticationDataManager, AuthenticationDataManager>();
+        services.AddSingleton<IServiceProviderDataManager, ServiceProviderDataManager>();
 
         // Add CORS policy to allow requests from Angular app
         services.AddCors(options =>

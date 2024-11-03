@@ -59,9 +59,9 @@ export class PolicytypeComponent implements OnInit {
   toggleAll(event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;
     this.rows.forEach(row => row.isChecked = isChecked);
-    if(isChecked){
-      this.selectedItems=this.rows;
-    }else{
+    if (isChecked) {
+      this.selectedItems = this.rows;
+    } else {
       this.selectedItems = [];
     }
   }
@@ -98,17 +98,32 @@ export class PolicytypeComponent implements OnInit {
 
   onEdit() {
     console.log('Edit button clicked in GridHeader');
+    this.isItemSelected = false;
+    this.addEditPolicyTypeComponent.policyType = this.selectedPolicyType;
+    this.addEditPolicyTypeComponent.showSidebar();
+    this.selectedPolicyType = {} as PolicyType;
     // Implement your logic here
   }
 
   onDelete() {
     console.log('Delete button clicked in GridHeader ');
-    // Implement your logic here
+    this.selectedPolicyType.isActive = false;
+    this.policyTypeService.insertOrUpdatePolicyTypeAsync(this.selectedPolicyType).subscribe(response => {
+      this.fetchPolicyTypesAsync();
+      this.isItemSelected = false;
+      this.selectedPolicyType = {} as PolicyType;
+    });
   }
 
   onCopy() {
     console.log('Copy button clicked in GridHeader');
     // Implement your logic here
+    this.selectedPolicyType.policyTypeId = 0;
+    this.policyTypeService.insertOrUpdatePolicyTypeAsync(this.selectedPolicyType).subscribe(response => {
+      this.isItemSelected = false;
+      this.selectedPolicyType = {} as PolicyType;
+      this.fetchPolicyTypesAsync();
+    });
   }
 
   onImport() {

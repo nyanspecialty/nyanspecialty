@@ -1,0 +1,31 @@
+.padding-rigt {
+    padding-right: 5px !important;
+}
+
+.fa {
+    font-size: 18px !important;
+}
+
+.add-plus-class,
+.import-class,
+.export-class {
+    color: #00bfa0 !important;
+}
+
+.edit-pen-class {
+    color: blue !important;
+}
+
+.delete-trash-class {
+    color: red !important;
+}
+
+.copy-square-class {
+    color: yellow !important;
+}
+.padding-botom{
+    padding-bottom: 5px  !important;
+}
+.curosor-point{
+    cursor: pointer !important;
+}

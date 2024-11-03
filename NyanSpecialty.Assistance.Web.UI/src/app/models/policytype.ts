@@ -3,9 +3,9 @@ export interface PolicyType {
     name: string;
     code: string;
     createdBy?: number;
-    createdOn?: string;
+    createdOn?: Date;
     modifiedBy?: number;
-    modifiedOn?: string;
+    modifiedOn?: Date;
     isActive: boolean;
     isChecked?: boolean;
 };

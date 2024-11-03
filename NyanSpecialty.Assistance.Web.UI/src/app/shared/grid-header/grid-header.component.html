@@ -3,22 +3,24 @@
         <span id="addBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="add()">
             <i class="fa fa-plus-circle add-plus-class" title="add"></i>
         </span>
-        <span id="editBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="edit()">
+        <span id="editBtn" class="padding-rigt custom-cursor padding-botom curosor-point" 
+              [class.disabled]="!isItemSelected" (click)="isItemSelected ? edit() : null">
             <i class="fa fa-pen edit-pen-class" title="edit"></i>
         </span>
-        <span id="deleteBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="delete()">
+        <span id="deleteBtn" class="padding-rigt custom-cursor padding-botom curosor-point" 
+              [class.disabled]="!isItemSelected" (click)="isItemSelected ? delete() : null">
             <i class="fa fa-trash delete-trash-class" title="delete"></i>
         </span>
-        <span id="copyBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="copy()">
-            <i class="fa fa-plus-square copy-square-class" title="copy"></i>
+        <span id="copyBtn" class="padding-rigt custom-cursor padding-botom curosor-point" 
+              [class.disabled]="!isItemSelected" (click)="isItemSelected ? copy() : null">
+            <i class="fa fa-plus -square copy-square-class" title="copy"></i>
         </span>
-       
     </div>
     <div class="float-right">
         <span id="importBtn" class="custom-cursor padding-rigt padding-botom curosor-point" (click)="import()">
             <i class="fa fa-upload import-class" title="import"></i>
         </span>
-        <span id="exportBtn" class=" custom-cursor padding-botom curosor-point" data-toggle="dropdown">
+        <span id="exportBtn" class="custom-cursor padding-botom curosor-point" data-toggle="dropdown">
             <i class="fa fa-download export-class" title="export"></i>
         </span>
         <div class="dropdown-menu dropdown-menu-right">

@@ -9,8 +9,9 @@
             (importClicked)="onImport()"
             (exportTemplateClicked)="onExportTemplate()"
             (exportWithGridDataClicked)="onExportWithGridData()"
-            (exportWithOriginalDataClicked)="onExportWithOriginalData()"></grid-header>
-            <add-edit-policy-type #addEditPolicyTypeComponent></add-edit-policy-type>
+            (exportWithOriginalDataClicked)="onExportWithOriginalData()"
+            [isItemSelected]="isItemSelected"></grid-header>
+            <add-edit-policy-type #addEditPolicyTypeComponent (policyTypeChange)="handlePolicyTypeChange($event)"></add-edit-policy-type>
             <div class="card-body card-body-padding">
                 <ngx-datatable class="bootstrap datatable-container bordered-datatable" [rows]="rows"
                     [columnMode]="'force'" [rowHeight]="50" [headerHeight]="50" [scrollbarV]="true">
@@ -22,7 +23,7 @@
                         </ng-template>
                         <ng-template let-row="row" ngx-datatable-cell-template>
                             <div class="checkbox-container">
-                                <input type="checkbox" [(ngModel)]="row.isChecked" (change)="onRowCheckboxChange()" />
+                                <input type="checkbox" [(ngModel)]="row.isChecked" (change)="onRowCheckboxChange(row,$event)" />
                             </div>
                         </ng-template>
                     </ngx-datatable-column>

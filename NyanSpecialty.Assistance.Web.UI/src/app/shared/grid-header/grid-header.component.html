@@ -1,6 +1,6 @@
 <div class="card-header card-header-padding">
     <div class="float-left">
-        <span id="addBtn" class="padding-rigt custom-cursor padding-botom curosor-point" (click)="add()">
+        <span id="addBtn" class="padding-rigt custom-cursor padding-botom curosor-point" [class.disabled]="isItemSelected" (click)="!isItemSelected ? add() : null">
             <i class="fa fa-plus-circle add-plus-class" title="add"></i>
         </span>
         <span id="editBtn" class="padding-rigt custom-cursor padding-botom curosor-point" 

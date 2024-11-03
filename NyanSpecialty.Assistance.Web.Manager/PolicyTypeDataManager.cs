@@ -20,9 +20,9 @@ namespace NyanSpecialty.Assistance.Web.Manager
         }
 
 
-        public Task<PolicyType> GetPolicyTypeByIdAsync(long policyTypeId)
+        public async Task<PolicyType> GetPolicyTypeByIdAsync(long policyTypeId)
         {
-            return dbContext.policyTypes.Where(x => x.PolicyTypeId == policyTypeId).FirstOrDefaultAsync();
+            return await dbContext.policyTypes.Where(x => x.PolicyTypeId == policyTypeId).FirstOrDefaultAsync();
         }
 
         public async Task<PolicyType> InsertOrUpdatePolicyTypeAsync(PolicyType policyType)

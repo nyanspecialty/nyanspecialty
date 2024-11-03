@@ -362,3 +362,10 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /NyanSpecialty.Assistance.Web.Api/local.settings.json
+/NyanSpecialty.Assistance.Web.UI/package-lock.json
+/.gitignore
+/.gitignore
+/.gitignore
+/.gitignore
+/.gitignore
+/.gitignore

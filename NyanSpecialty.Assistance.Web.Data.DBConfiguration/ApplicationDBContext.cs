@@ -21,5 +21,7 @@ namespace NyanSpecialty.Assistance.Web.Data.DBConfiguration
         public DbSet<InsurancePolicy> insurancePolicies { get; set; }
         public DbSet<Customers> customers { get; set; }
         public DbSet<User> users { get; set; }
+        public DbSet<ServiceProvider> serviceProviders { get; set; }
+        public DbSet<ServiceType> serviceTypes { get; set; }
     }
 }

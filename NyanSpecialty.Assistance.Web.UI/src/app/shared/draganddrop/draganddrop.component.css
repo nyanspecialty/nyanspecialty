@@ -1,0 +1,9 @@
+#fileDropArea {
+    border: 2px dashed #007bff;
+    padding:  20px;
+    text-align: center;
+    margin: 10px 0;
+}
+#fileDropArea.drag-over {
+    background-color: #e9ecef;
+}

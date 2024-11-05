@@ -3,16 +3,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="fileUploadModalLabel">Import Files</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnImportClose">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnImportClose" (onclose)="onclose()">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
                     <label for="fileInput">Choose File:</label>
-                    <input type="file" class="form-control-file" id="fileInput">
+                    <input type="file" class="form-control-file" id="fileInput" (change)="onFileChange($event)">
                 </div>
-                <div id="fileDropArea">
+                <div id="fileDropArea" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
                     <p>Drag and drop files here</p>
                 </div>
                 <div id="fileInfo">
@@ -20,8 +20,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnImportClose">Close</button>
-                <button type="button" class="btn btn-primary" id="uploadButton">Upload</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="btnImportClose" (onclose)="onclose()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="upload()">Upload</button>
             </div>
         </div>
     </div>

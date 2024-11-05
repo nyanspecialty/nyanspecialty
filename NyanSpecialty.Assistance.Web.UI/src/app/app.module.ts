@@ -19,8 +19,9 @@ import { GridHeaderComponent } from './shared/grid-header/grid-header.component'
 import { SiteHeaderComponent } from './shared/site-header/site-header.component';
 import { SiteSideBarComponent } from './shared/site-side-bar/site-side-bar.component';
 import { AddEditPolicyTypeComponent } from './policytype/addeditpolicytype.component';
-import { PolicyTypeModule } from './policytype/policytype.module';
 import { DeleteconfirmComponent } from './shared/deleteconfirm/deleteconfirm.component';
+import { ServiceTypeService } from './services/servicetype.service';
+import { AddEditServiceTypeComponent } from './servicetype/add-edit-servicetype.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DeleteconfirmComponent } from './shared/deleteconfirm/deleteconfirm.com
     SiteHeaderComponent,
     SiteSideBarComponent,
     AddEditPolicyTypeComponent,
-    DeleteconfirmComponent
+    DeleteconfirmComponent,
+    AddEditServiceTypeComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,9 @@ import { DeleteconfirmComponent } from './shared/deleteconfirm/deleteconfirm.com
     // PolicyTypeModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService,PolicyTypeService],
+  providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService,PolicyTypeService,
+    ServiceTypeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

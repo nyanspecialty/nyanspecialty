@@ -5,27 +5,44 @@ export const environment = {
     coreApiUrl: 'http://localhost:7014/api/',
     UrlConstants: {
         Authenticate: 'useraccess/authenticate',
-        VerifyAccesToken: 'useraccess/verifyaccestoken',
-        GenerateUserCliams: 'useraccess/generateusercliams',
+        VerifyAccessToken: 'useraccess/verifyaccestoken',
+        GenerateUserClaims: 'useraccess/generateusercliams',
+    
+        // Customers
         GetCustomers: 'customers/getcustomers',
         GetCustomersById: 'customers/getcustomersbyid',
+        SaveCustomers: 'customers/savecustomers',
+    
+        // Insurance Policies
         GetInsurancePolicies: 'insurancepolicy/getinsurancepolicies',
         GetInsurancePolicyById: 'insurancepolicy/getinsurancepolicy/{insurancepolicyid}',
+        SaveInsurancePolicy: 'insurancepolicy/saveinsurancepolicy',
+        UploadInsurancePolicies: 'insurancepolicy/uploadinsurancepolicies',
+    
+        // Policy Categories
         GetPolicyCategories: 'policycategory/getpolicycategories',
         GetPolicyCategoryById: 'policycategory/getpolicycategoriesbyid',
-        GetPolicyTypeById: 'policytype/getpolicytypebyid',
-        GetPolicyTypes: 'policytype/getpolicytypes',
-        GetVehicleClassById: 'vehicleclass/getvehicleclassbyid/{vehicleClassId}',
-        GetVehicleClasses: 'vehicleclass/getvehicleclasses',
-        GetVehicleSizeById: 'vehiclesize/getvehiclesizebyid/{vehiclesizeid}',
-        GetVehicleSizes: 'vehiclesize/getvehiclesizes',
-        SaveCustomers: 'customers/savecustomers',
-        SaveInsurancePolicy: 'insurancepolicy/saveinsurancepolicy',
         SavePolicyCategory: 'policycategory/savepolicycategory',
+    
+        // Policy Types
+        GetPolicyTypes: 'policytype/getpolicytypes',
+        GetPolicyTypeById: 'policytype/getpolicytypebyid',
         SavePolicyType: 'policttype/savepolicyType',
+    
+        // Vehicle Classes
+        GetVehicleClasses: 'vehicleclass/getvehicleclasses',
+        GetVehicleClassById: 'vehicleclass/getvehicleclassbyid/{vehicleClassId}',
         SaveVehicleClass: 'vehicleclass/savevehicleclass',
+    
+        // Vehicle Sizes
+        GetVehicleSizes: 'vehiclesize/getvehiclesizes',
+        GetVehicleSizeById: 'vehiclesize/getvehiclesizebyid/{vehiclesizeid}',
         SaveVehicleSize: 'vehiclesize/savevehiclesize',
-        UploadInsurancePolicies: 'insurancepolicy/uploadinsurancepolicies'
+    
+        // Service Types
+        GetServiceTypes: 'servicetype/getallservicetypes',
+        GetServiceType: 'servicetype/getservicetypebyid',
+        SaveServiceType: 'servicetype/saveservicetype',
     },
     Messages: {
         InvalidPassword: "Authentication Failed due to Invalid Password ,Please enter correct password and try again",

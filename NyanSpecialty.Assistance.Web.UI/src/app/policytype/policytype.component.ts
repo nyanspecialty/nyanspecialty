@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { PolicyTypeService } from '../services/policytype.service';
 import { PolicyType } from '../models/policytype';
@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { GridHeaderComponent } from '../shared/grid-header/grid-header.component';
 import { AddEditPolicyTypeComponent } from './addeditpolicytype.component';
+import { DeleteconfirmComponent } from '../shared/deleteconfirm/deleteconfirm.component';
+import { CopyconfirmComponent } from '../shared/copyconfirm/copyconfirm.component';
 
 @Component({
   selector: 'app-policytype',
@@ -15,7 +17,9 @@ import { AddEditPolicyTypeComponent } from './addeditpolicytype.component';
     NgxDatatableModule,
     FormsModule,
     GridHeaderComponent,
-    AddEditPolicyTypeComponent],
+    AddEditPolicyTypeComponent,
+    DeleteconfirmComponent,
+    CopyconfirmComponent],
   templateUrl: './policytype.component.html',
   styleUrl: './policytype.component.css',
   encapsulation: ViewEncapsulation.None,
@@ -41,6 +45,10 @@ export class PolicytypeComponent implements OnInit {
 
   isItemSelected: boolean = false;
 
+  showDeleteConfirmModal: boolean = false;
+
+  showCopyConfirmModal: boolean = false;
+
   constructor(private policyTypeService: PolicyTypeService, private loader: LoaderService) { }
 
   ngOnInit() {
@@ -55,6 +63,8 @@ export class PolicytypeComponent implements OnInit {
       })) as PolicyType[];
       this.filteredRows = this.rows;
     });
+    this.loader.hideLoader();
+
   }
   toggleAll(event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;
@@ -106,16 +116,29 @@ export class PolicytypeComponent implements OnInit {
   }
 
   onDelete() {
-    console.log('Delete button clicked in GridHeader ');
+    this.showDeleteConfirmModal = true;
+  }
+  confirmDelete() {
+    this.loader.showLoader();
+    console.log('Confirmed delete for:', this.selectedPolicyType);
     this.selectedPolicyType.isActive = false;
     this.policyTypeService.insertOrUpdatePolicyTypeAsync(this.selectedPolicyType).subscribe(response => {
       this.fetchPolicyTypesAsync();
       this.isItemSelected = false;
       this.selectedPolicyType = {} as PolicyType;
+      this.loader.hideLoader();
+      this.showDeleteConfirmModal = false;
     });
   }
 
+  cancelDelete() {
+    this.showDeleteConfirmModal = false;
+  }
   onCopy() {
+    this.showCopyConfirmModal = true;
+  }
+  confirmCopy() {
+    this.loader.showLoader();
     console.log('Copy button clicked in GridHeader');
     // Implement your logic here
     this.selectedPolicyType.policyTypeId = 0;
@@ -123,9 +146,13 @@ export class PolicytypeComponent implements OnInit {
       this.isItemSelected = false;
       this.selectedPolicyType = {} as PolicyType;
       this.fetchPolicyTypesAsync();
+      this.showCopyConfirmModal = false;
+      this.loader.hideLoader();
     });
   }
-
+  cancelCopy() {
+    this.showCopyConfirmModal = false;
+  }
   onImport() {
     console.log('Import button clicked in GridHeader');
     // Implement your logic here
@@ -146,6 +173,7 @@ export class PolicytypeComponent implements OnInit {
     // Implement your logic here
   }
   handlePolicyTypeChange(policyType: PolicyType) {
+    this.loader.showLoader();
     console.log('Received policy type from child:', policyType);
     policyType.createdBy = 1;
     policyType.createdOn = new Date();

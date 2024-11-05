@@ -20,6 +20,7 @@ import { SiteHeaderComponent } from './shared/site-header/site-header.component'
 import { SiteSideBarComponent } from './shared/site-side-bar/site-side-bar.component';
 import { AddEditPolicyTypeComponent } from './policytype/addeditpolicytype.component';
 import { PolicyTypeModule } from './policytype/policytype.module';
+import { DeleteconfirmComponent } from './shared/deleteconfirm/deleteconfirm.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PolicyTypeModule } from './policytype/policytype.module';
     GridHeaderComponent,
     SiteHeaderComponent,
     SiteSideBarComponent,
-    AddEditPolicyTypeComponent
+    AddEditPolicyTypeComponent,
+    DeleteconfirmComponent
   ],
   imports: [
     BrowserModule,

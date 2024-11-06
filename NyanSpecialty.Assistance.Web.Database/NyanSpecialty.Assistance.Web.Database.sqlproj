@@ -72,6 +72,7 @@
     <Build Include="nyanspecialty\Tables\User.sql" />
     <Build Include="nyanspecialty\Tables\ServiceProvider.sql" />
     <Build Include="nyanspecialty\Tables\ServiceType.sql" />
+    <Build Include="nyanspecialty\Tables\WorkFlow.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="nyanspecialty\Post-Deployment\Script.PostDeployment.sql" />

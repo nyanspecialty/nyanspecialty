@@ -23,5 +23,6 @@ namespace NyanSpecialty.Assistance.Web.Data.DBConfiguration
         public DbSet<User> users { get; set; }
         public DbSet<ServiceProvider> serviceProviders { get; set; }
         public DbSet<ServiceType> serviceTypes { get; set; }
+        public DbSet<WorkFlow> workFlows { get; set; }
     }
 }

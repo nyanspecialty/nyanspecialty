@@ -1,7 +1,7 @@
 <site-side-bar *ngIf="isLoggedIn"></site-side-bar>
 <site-header *ngIf="isLoggedIn"></site-header>
 
-<div class="pcoded-main-container">
+<div class="pcoded-main-container"  [ngStyle]="{'margin-left': isLoggedIn ? '235px' : '0px' }">
     <div class="pcoded-content">
         <!-- [ breadcrumb ] start -->
         <div class="page-header" *ngIf="isLoggedIn">

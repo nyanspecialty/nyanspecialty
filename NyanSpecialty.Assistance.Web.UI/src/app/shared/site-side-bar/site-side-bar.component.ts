@@ -1,32 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { ApplicationUser } from '../../models/appUser';
 import { CommonModule } from '@angular/common';
+import { ApplicationUser } from '../../models/appUser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'site-side-bar',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './site-side-bar.component.html',
-  styleUrl: './site-side-bar.component.css'
+  styleUrls: ['./site-side-bar.component.css']
 })
 export class SiteSideBarComponent implements OnInit {
   applicationUser: ApplicationUser = {} as ApplicationUser;
-  isPageLayoutsOpen = false;
-  isBasicOpen = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
+
   ngOnInit(): void {
     const appuser = sessionStorage.getItem("ApplicationUser");
     if (appuser) {
       this.applicationUser = JSON.parse(appuser);
     }
-  }
- 
-  togglePageLayouts() {
-    this.isPageLayoutsOpen = !this.isPageLayoutsOpen;
-  }
 
-  toggleBasic() {
-    this.isBasicOpen = !this.isBasicOpen;
+  }
+  policytypeClick() {
+    this.router.navigate(['/policytype']);
+  }
+  servicetypeClick(){
+    this.router.navigate(['/servicetype']);
+  }
+  landingClick(){
+    this.router.navigate(['/landing']);
   }
 }

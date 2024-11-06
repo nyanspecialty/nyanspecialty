@@ -1,9 +1,0 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
-.d-none {
-    display: none; /* This class hides the element */
-}
-
-/* Optional: Add styles for the expanded state */
-.pcoded-submenu {
-    display: block; /* Ensure it shows when not collapsed */
-}

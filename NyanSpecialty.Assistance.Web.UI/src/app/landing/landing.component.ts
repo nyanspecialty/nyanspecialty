@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import { LoaderService } from '../services/loader.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })
-export class LandingComponent {
-
+export class LandingComponent implements AfterViewInit {
+  constructor(private loader: LoaderService) { }
+  ngAfterViewInit(): void {
+    this.loader.hideLoader();
+  }
 }

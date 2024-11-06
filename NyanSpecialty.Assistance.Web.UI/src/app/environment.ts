@@ -4,9 +4,9 @@ export const environment = {
     production: false,
     coreApiUrl: 'http://localhost:7014/api/',
     UrlConstants: {
-        Authenticate: 'useraccess/authenticate',
+        Authenticate: 'useraccess/authenticateuser',
         VerifyAccessToken: 'useraccess/verifyaccestoken',
-        GenerateUserClaims: 'useraccess/generateusercliams',
+        GenerateUserClaims: 'useraccess/genarateuserclaims',
     
         // Customers
         GetCustomers: 'customers/getcustomers',

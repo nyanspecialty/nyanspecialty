@@ -1,10 +1,10 @@
-<site-side-bar></site-side-bar>
-<site-header></site-header>
+<site-side-bar *ngIf="isLoggedIn"></site-side-bar>
+<site-header *ngIf="isLoggedIn"></site-header>
 
 <div class="pcoded-main-container">
     <div class="pcoded-content">
         <!-- [ breadcrumb ] start -->
-        <div class="page-header">
+        <div class="page-header" *ngIf="isLoggedIn">
             <div class="page-block">
                 <div class="row align-items-center">
                     <div class="col-md-12">

@@ -21,7 +21,8 @@ var host = new HostBuilder()
         // Register your data managers
         services.AddSingleton<IVehicleSizeDataManager, VehicleSizeDataManager>();
         services.AddSingleton<IVehicleClassDataManager, VehicleClassDataManager>();
-        services.AddSingleton<IPolicyTypeDataManager, PolicyTypeDataManager>();
+        services.AddSingleton<IPolicyTypeDataManager, PolicyTypeDataManager>(); 
+        services.AddSingleton<IPolicyCategoryDataManager, PolicyCategoryDataManager>();
         services.AddSingleton<IInsurancePolicyDataManager, InsurancePolicyDataManager>();
         services.AddSingleton<IUserDataManager, UserDataManager>();
         services.AddSingleton<IAuthenticationDataManager, AuthenticationDataManager>();

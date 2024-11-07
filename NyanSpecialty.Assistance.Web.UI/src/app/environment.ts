@@ -43,6 +43,10 @@ export const environment = {
         GetServiceTypes: 'servicetype/getallservicetypes',
         GetServiceType: 'servicetype/getservicetypebyid',
         SaveServiceType: 'servicetype/saveservicetype',
+
+        //Workflow
+        GetWorkflows: 'workflow/getallworkflows',
+        SaveWorkflow:'workflow/saveworkflow'
     },
     Messages: {
         InvalidPassword: "Authentication Failed due to Invalid Password ,Please enter correct password and try again",

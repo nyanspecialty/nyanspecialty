@@ -50,11 +50,11 @@ namespace NyanSpecialty.Assistance.Web.Manager
                     var existProvide = await dbContext.serviceProviders.FindAsync(serviceProvider.ProviderId);
                     if (existProvide != null)
                     {
-                        bool hasChanges = EntityUpdater.HasChanges(serviceProvider, existProvide,
+                        bool hasChanges = EntityUpdater.HasChanges(existProvide,serviceProvider,
                             nameof(serviceProvider.CreatedBy), nameof(serviceProvider.CreatedOn));
                         if (hasChanges)
                         {
-                            EntityUpdater.UpdateProperties(serviceProvider, existProvide,
+                            EntityUpdater.UpdateProperties(existProvide, serviceProvider, 
                                  nameof(serviceProvider.CreatedBy), nameof(serviceProvider.CreatedOn));
                             await dbContext.SaveChangesAsync();
                             return serviceProvider;

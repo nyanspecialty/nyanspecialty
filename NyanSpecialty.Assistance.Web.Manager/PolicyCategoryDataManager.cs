@@ -39,10 +39,10 @@ namespace NyanSpecialty.Assistance.Web.Manager
                     var existingPolicyCategory = await dbContext.policyCategories.FindAsync(policyCategory.PolicyCategoryId);
                     if (existingPolicyCategory != null)
                     {
-                        bool hasChanges = EntityUpdater.HasChanges(policyCategory, existingPolicyCategory, nameof(policyCategory.CreatedBy), nameof(policyCategory.CreatedOn));
+                        bool hasChanges = EntityUpdater.HasChanges(existingPolicyCategory,policyCategory, nameof(policyCategory.CreatedBy), nameof(policyCategory.CreatedOn));
                         if (hasChanges)
                         {
-                            EntityUpdater.UpdateProperties(policyCategory, existingPolicyCategory, nameof(policyCategory.CreatedBy), nameof(policyCategory.CreatedOn));
+                            EntityUpdater.UpdateProperties(existingPolicyCategory,policyCategory, nameof(policyCategory.CreatedBy), nameof(policyCategory.CreatedOn));
                             await dbContext.SaveChangesAsync(); 
                             return policyCategory;
 

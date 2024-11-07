@@ -22,6 +22,10 @@ import { AddEditPolicyTypeComponent } from './policytype/addeditpolicytype.compo
 import { DeleteconfirmComponent } from './shared/deleteconfirm/deleteconfirm.component';
 import { ServiceTypeService } from './services/servicetype.service';
 import { AddEditServiceTypeComponent } from './servicetype/add-edit-servicetype.component';
+import { PolicyCategoryService } from './services/policycategory.service';
+import { AddEditPolicyCategoryComponent } from './policycategory/add-edit-policycategory.component';
+import { CommonPropsService } from './services/common.service';
+import { AddEditWorkflowComponent } from './work-flow/add-edit-workflow.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,9 @@ import { AddEditServiceTypeComponent } from './servicetype/add-edit-servicetype.
     SiteSideBarComponent,
     AddEditPolicyTypeComponent,
     DeleteconfirmComponent,
-    AddEditServiceTypeComponent
+    AddEditServiceTypeComponent,
+    AddEditPolicyCategoryComponent,
+    AddEditWorkflowComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +59,7 @@ import { AddEditServiceTypeComponent } from './servicetype/add-edit-servicetype.
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService,PolicyTypeService,
-    ServiceTypeService
+    ServiceTypeService,PolicyCategoryService,CommonPropsService
   ],
   bootstrap: [AppComponent]
 })

@@ -25,10 +25,13 @@ export class SiteSideBarComponent implements OnInit {
   policytypeClick() {
     this.router.navigate(['/policytype']);
   }
-  servicetypeClick(){
+  servicetypeClick() {
     this.router.navigate(['/servicetype']);
   }
-  landingClick(){
+  landingClick() {
     this.router.navigate(['/landing']);
+  }
+  policyCategoryClick() {
+    this.router.navigate(['/policycategory']);
   }
 }

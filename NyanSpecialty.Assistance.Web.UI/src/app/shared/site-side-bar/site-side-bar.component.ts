@@ -34,4 +34,7 @@ export class SiteSideBarComponent implements OnInit {
   policyCategoryClick() {
     this.router.navigate(['/policycategory']);
   }
+  workflowClick() {
+    this.router.navigate(['/workflow']);
+  }
 }

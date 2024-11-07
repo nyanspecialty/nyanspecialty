@@ -26,6 +26,8 @@ import { PolicyCategoryService } from './services/policycategory.service';
 import { AddEditPolicyCategoryComponent } from './policycategory/add-edit-policycategory.component';
 import { CommonPropsService } from './services/common.service';
 import { AddEditWorkflowComponent } from './work-flow/add-edit-workflow.component';
+import { VehicleClassService } from './services/vehicleclass.service';
+import { AddEditVehicleClassComponent } from './vehicleclass/add-edit-vehicleclass.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { AddEditWorkflowComponent } from './work-flow/add-edit-workflow.componen
     DeleteconfirmComponent,
     AddEditServiceTypeComponent,
     AddEditPolicyCategoryComponent,
-    AddEditWorkflowComponent
+    AddEditWorkflowComponent,
+    AddEditVehicleClassComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { AddEditWorkflowComponent } from './work-flow/add-edit-workflow.componen
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService,PolicyTypeService,
-    ServiceTypeService,PolicyCategoryService,CommonPropsService
+    ServiceTypeService,PolicyCategoryService,CommonPropsService,
+    VehicleClassService
   ],
   bootstrap: [AppComponent]
 })

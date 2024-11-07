@@ -7,6 +7,7 @@ import { ServicetypeComponent } from './servicetype/servicetype.component';
 import { AuthGuard } from './guards/auth.guard';
 import { PolicyCategoryComponent } from './policycategory/policycategory.component';
 import { WorkFlowComponent } from './work-flow/work-flow.component';
+import { VehiclesizeComponent } from './vehiclesize/vehiclesize.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'servicetype', component: ServicetypeComponent, canActivate: [AuthGuard] },
   { path: 'policycategory', component: PolicyCategoryComponent, canActivate: [AuthGuard] },
   { path: 'workflow', component: WorkFlowComponent, canActivate: [AuthGuard] },
+  { path: 'vehiclesize', component: VehiclesizeComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];

@@ -37,4 +37,7 @@ export class SiteSideBarComponent implements OnInit {
   workflowClick() {
     this.router.navigate(['/workflow']);
   }
+  vehiclesizeClick() {
+    this.router.navigate(['/vehiclesize']);
+  }
 }

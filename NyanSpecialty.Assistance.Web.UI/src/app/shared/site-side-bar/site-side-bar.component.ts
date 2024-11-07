@@ -40,4 +40,7 @@ export class SiteSideBarComponent implements OnInit {
   vehiclesizeClick() {
     this.router.navigate(['/vehiclesize']);
   }
+  vehicleclassClick() {
+    this.router.navigate(['/vehicleclass']);
+  }
 }

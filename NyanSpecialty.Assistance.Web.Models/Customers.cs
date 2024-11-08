@@ -14,10 +14,10 @@ namespace NyanSpecialty.Assistance.Web.Models
     {
         [Key]
         public long CustomerID { get; set; }
-        public string Name { get; set; }
-        public string ContactNumber { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
+        public string? Name { get; set; }
+        public string? ContactNumber { get; set; }
+        public string? Email { get; set; }
+        public string? Address { get; set; }
         public long? InsurancePolicyID { get; set; }
 
     }

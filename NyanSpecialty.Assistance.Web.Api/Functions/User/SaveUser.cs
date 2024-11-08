@@ -10,7 +10,7 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
     public partial class UserFunctions
     {
         [Function("SaveUser")]
-        public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post", Route ="user/saveuser")] HttpRequest req)
+        public async Task<IActionResult> SaveUser([HttpTrigger(AuthorizationLevel.Function, "post", Route ="user/saveuser")] HttpRequest req)
         {
             _logger.LogInformation("UserFunctions.SaveUser Invoked");
             try

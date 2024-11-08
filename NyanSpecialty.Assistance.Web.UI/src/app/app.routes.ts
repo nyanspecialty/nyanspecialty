@@ -9,6 +9,9 @@ import { PolicyCategoryComponent } from './policycategory/policycategory.compone
 import { WorkFlowComponent } from './work-flow/work-flow.component';
 import { VehiclesizeComponent } from './vehiclesize/vehiclesize.component';
 import { VehicleClassComponent } from './vehicleclass/vehicleclass.component';
+import { UserComponent } from './user/user.component';
+import { RoleComponent } from './role/role.component';
+import { ServiceProviderComponent } from './serviceprovider/serviceprovider.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -19,5 +22,8 @@ export const routes: Routes = [
   { path: 'workflow', component: WorkFlowComponent, canActivate: [AuthGuard] },
   { path: 'vehiclesize', component: VehiclesizeComponent, canActivate: [AuthGuard] },
   { path: 'vehicleclass', component: VehicleClassComponent, canActivate: [AuthGuard] },
+  { path: 'serviceprovider', component: ServiceProviderComponent, canActivate: [AuthGuard] },
+  { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
+  { path: 'roles', component: RoleComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];

@@ -43,4 +43,13 @@ export class SiteSideBarComponent implements OnInit {
   vehicleclassClick() {
     this.router.navigate(['/vehicleclass']);
   }
+  userClick() {
+    this.router.navigate(['/users']);
+  }
+  roleClick() {
+    this.router.navigate(['/roles']);
+  }
+  serviceProviderClick() {
+    this.router.navigate(['/serviceprovider']);
+  }
 }

@@ -7,38 +7,38 @@ export const environment = {
         Authenticate: 'useraccess/authenticateuser',
         VerifyAccessToken: 'useraccess/verifyaccestoken',
         GenerateUserClaims: 'useraccess/genarateuserclaims',
-    
+
         // Customers
         GetCustomers: 'customers/getcustomers',
         GetCustomersById: 'customers/getcustomersbyid',
         SaveCustomers: 'customers/savecustomers',
-    
+
         // Insurance Policies
         GetInsurancePolicies: 'insurancepolicy/getinsurancepolicies',
         GetInsurancePolicyById: 'insurancepolicy/getinsurancepolicy/{insurancepolicyid}',
         SaveInsurancePolicy: 'insurancepolicy/saveinsurancepolicy',
         UploadInsurancePolicies: 'insurancepolicy/uploadinsurancepolicies',
-    
+
         // Policy Categories
         GetPolicyCategories: 'policycategory/getpolicycategories',
         GetPolicyCategoryById: 'policycategory/getpolicycategoriesbyid',
         SavePolicyCategory: 'policycategory/savepolicycategory',
-    
+
         // Policy Types
         GetPolicyTypes: 'policytype/getpolicytypes',
         GetPolicyTypeById: 'policytype/getpolicytypebyid',
         SavePolicyType: 'policttype/savepolicyType',
-    
+
         // Vehicle Classes
         GetVehicleClasses: 'vehicleclass/getvehicleclasses',
         GetVehicleClassById: 'vehicleclass/getvehicleclassbyid/{vehicleClassId}',
         SaveVehicleClass: 'vehicleclass/savevehicleclass',
-    
+
         // Vehicle Sizes
         GetVehicleSizes: 'vehiclesize/getvehiclesizes',
         GetVehicleSizeById: 'vehiclesize/getvehiclesizebyid/{vehiclesizeid}',
         SaveVehicleSize: 'vehiclesize/savevehiclesize',
-    
+
         // Service Types
         GetServiceTypes: 'servicetype/getallservicetypes',
         GetServiceType: 'servicetype/getservicetypebyid',
@@ -46,7 +46,22 @@ export const environment = {
 
         //Workflow
         GetWorkflows: 'workflow/getallworkflows',
-        SaveWorkflow:'workflow/saveworkflow'
+        SaveWorkflow: 'workflow/saveworkflow',
+
+        //Role
+        GetRoles: 'role/getroles',
+        SaveRole: 'role/saverole',
+
+        //Service Providers
+        GetAllServiceProviders: 'serviceprovider/getallserviceproviders',
+        GetServiceProvider: 'serviceprovider/getserviceprovider',
+        SaveServiceProvider:'serviceprovider/saveserviceprovider',
+
+         //Service Providers
+         GetUsers: 'user/getusers',
+         GetUserById: 'user/getuserbyid',
+         SaveUser:'user/saveuser'
+
     },
     Messages: {
         InvalidPassword: "Authentication Failed due to Invalid Password ,Please enter correct password and try again",

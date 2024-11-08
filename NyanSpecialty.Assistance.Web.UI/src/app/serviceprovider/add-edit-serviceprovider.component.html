@@ -1,0 +1,78 @@
+<form id="AddEditServiceProviderorm" (ngSubmit)="onSubmit()">
+    <div class="sidebar" id="sidebar" [ngClass]="{'show': isSidebarVisible}">
+        <div class="modal-header">
+            <h5 class="modal-title">Add/Edit Service Provider</h5>
+            <button type="button" class="close" (click)="closeSidebar()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" required [(ngModel)]="serviceProvider.name" name="name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contactNumber">Contact Number</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="contactNumber" placeholder="Enter contact number" required [(ngModel)]="serviceProvider.contactNumber" name="contactNumber">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="email" placeholder="Enter email" required [(ngModel)]="serviceProvider.email" name="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="address" placeholder="Enter address" required [(ngModel)]="serviceProvider.address" name="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="serviceArea">Service Area</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="serviceArea" placeholder="Enter service area" required [(ngModel)]="serviceProvider.serviceArea" name="serviceArea">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="latitude">Latitude</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="latitude" placeholder="Enter latitude" required [(ngModel)]="serviceProvider.latitude" name="email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="longitude">Longitude</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="longitude" placeholder="Enter longitude" required [(ngModel)]="serviceProvider.longitude" name="email">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>

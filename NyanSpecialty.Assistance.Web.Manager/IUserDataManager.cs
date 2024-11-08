@@ -9,6 +9,8 @@ namespace NyanSpecialty.Assistance.Web.Manager
 
         Task<IEnumerable<UserInfirmation>> FetchUsersAsync();
 
+        Task<UserInfirmation> FetchUserByIdAsync(long id);
+
         Task<ApplicationUser> GetCurrentUserAsync(string email);
     }
 }

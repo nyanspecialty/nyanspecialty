@@ -1,0 +1,121 @@
+<form id="AddEditUserForm" (ngSubmit)="onSubmit()">
+    <div class="sidebar" id="sidebar" [ngClass]="{'show': isSidebarVisible}">
+        <div class="modal-header">
+            <h5 class="modal-title">Add/Edit User</h5>
+            <button type="button" class="close" (click)="closeSidebar()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- First Name -->
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required
+                        [(ngModel)]="userRegistration.firstName" name="firstName">
+                </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required
+                        [(ngModel)]="userRegistration.lastName" name="lastName">
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                    </div>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" required
+                        [(ngModel)]="userRegistration.email" name="email">
+                </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="phone" placeholder="Enter phone number" required
+                        [(ngModel)]="userRegistration.phone" name="phone">
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    </div>
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" required
+                        [(ngModel)]="userRegistration.password" name="password">
+                </div>
+            </div>
+
+            <!-- Customer ID -->
+            <div class="form-group">
+                <label for="customerId">Customer</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                    </div>
+                    <select class="form-control" id="customerId" [(ngModel)]="userRegistration.customerId"
+                        name="customerId" placeholder="Select a customer">
+                        <option value="" disabled>Select a customer</option>
+                        <option *ngFor="let customer of dbCustomers" [value]="customer.customerID">{{ customer.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Provider ID -->
+            <div class="form-group">
+                <label for="providerId">Provider</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-building"></i></span>
+                    </div>
+                    <select class="form-control" id="providerId" [(ngModel)]="userRegistration.providerId" placeholder="Select a provider"
+                        name="providerId">
+                        <option value="" disabled>Select a provider</option>
+                        <option *ngFor="let provider of dbServiceProviders" [value]="provider.providerId">{{ provider.name }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Role ID -->
+            <div class="form-group">
+                <label for="roleId">Role</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-cogs"></i></span>
+                    </div>
+                    <select class="form-control" id="roleId" [(ngModel)]="userRegistration.roleId" name="roleId" placeholder="Select a role">
+                        <option value="" disabled>Select a role</option>
+                        <option *ngFor="let role of dbRoles" [value]="role.roleId">{{ role.name }}</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>

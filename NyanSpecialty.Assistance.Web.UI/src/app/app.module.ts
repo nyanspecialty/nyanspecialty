@@ -28,12 +28,18 @@ import { CommonPropsService } from './services/common.service';
 import { AddEditWorkflowComponent } from './work-flow/add-edit-workflow.component';
 import { VehicleClassService } from './services/vehicleclass.service';
 import { AddEditVehicleClassComponent } from './vehicleclass/add-edit-vehicleclass.component';
+import { UserService } from './services/user.service';
+import { CustomerService } from './services/customers.service';
+import { InsurancePolicyService } from './services/insurancepolicy.service';
+import { RoleService } from './services/role.service';
+import { AddEditRoleComponent } from './role/add-edit-role.component';
+import { ServiceProviderService } from './services/serviceprovider.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    TogglePasswordDirective ,
+    TogglePasswordDirective,
     SpinnerComponent,
     GridHeaderComponent,
     SiteHeaderComponent,
@@ -43,7 +49,8 @@ import { AddEditVehicleClassComponent } from './vehicleclass/add-edit-vehiclecla
     AddEditServiceTypeComponent,
     AddEditPolicyCategoryComponent,
     AddEditWorkflowComponent,
-    AddEditVehicleClassComponent
+    AddEditVehicleClassComponent,
+    AddEditRoleComponent
   ],
   imports: [
     BrowserModule,
@@ -52,18 +59,19 @@ import { AddEditVehicleClassComponent } from './vehicleclass/add-edit-vehiclecla
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule, 
-    ToastrModule.forRoot({ 
-      positionClass: 'toast-top-right', 
-      timeOut: 3000, 
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+      timeOut: 3000,
       preventDuplicates: true,
     }),
     // PolicyTypeModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [AuthenticateService, RepositoryFactory, TokenService,LoaderService,PolicyTypeService,
-    ServiceTypeService,PolicyCategoryService,CommonPropsService,
-    VehicleClassService
+  providers: [AuthenticateService, RepositoryFactory, TokenService, LoaderService,
+    ServiceTypeService, PolicyCategoryService, CommonPropsService, PolicyTypeService,
+    VehicleClassService, CustomerService, InsurancePolicyService, RoleService, UserService,
+    ServiceProviderService
   ],
   bootstrap: [AppComponent]
 })

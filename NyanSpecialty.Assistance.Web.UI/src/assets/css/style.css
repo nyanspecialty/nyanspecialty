@@ -20934,6 +20934,7 @@ pre[class*=language-]:before {
 .pcoded-navbar .pcoded-submenu {
     background: #2c3e50;
     padding: 15px 0;
+    padding-left: 15px !important;
 }
 
 .pcoded-navbar a {
@@ -30199,7 +30200,7 @@ new-task label input[type=checkbox] {
 /* policytype.component.css */
 
 .datatable-container {
-  height: 500px; /* Adjust as needed */
+  height: 700px !important; /* Adjust as needed */
   overflow: auto; /* Enable scrolling */
 }
 .bordered-datatable .ngx-datatable {

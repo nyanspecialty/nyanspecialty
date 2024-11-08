@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NpgsqlTypes;
 using NyanSpecialty.Assistance.Web.Data.DBConfiguration;
 using NyanSpecialty.Assistance.Web.Data.Utility;
 using NyanSpecialty.Assistance.Web.Models;
+using SQLitePCL;
 
 namespace NyanSpecialty.Assistance.Web.Manager
 {
@@ -12,6 +14,39 @@ namespace NyanSpecialty.Assistance.Web.Manager
         {
             _dbContext = dbContext;
         }
+
+        public async Task<UserInfirmation> FetchUserByIdAsync(long id)
+        {
+            if (id <= 0)
+            {
+                throw new ArgumentException("User ID must be greater than zero.", nameof(id));
+            }
+            var user = await _dbContext.users
+                .Where(x => x.UserId == id)
+                .Select(userRegistration => new UserInfirmation
+                {
+                    FirstName = userRegistration.FirstName,
+                    LastName = userRegistration.LastName,
+                    Email = userRegistration.Email,
+                    Phone = userRegistration.Phone,
+                    RoleId = userRegistration.RoleId,
+                    CustomerId = userRegistration.CustomerId,
+                    ProviderId = userRegistration.ProviderId,
+                    IsBlocked = userRegistration.IsBlocked,
+                    LastPasswordChangedOn = userRegistration.LastPasswordChangedOn,
+                    CreatedBy = userRegistration.CreatedBy,
+                    CreatedOn = userRegistration.CreatedOn,
+                    IsActive = userRegistration.IsActive
+                }) .FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                throw new KeyNotFoundException($"User with ID {id} not found.");
+            }
+
+            return user;
+        }
+
         public async Task<IEnumerable<UserInfirmation>> FetchUsersAsync()
         {
             var users = (from userRegistration in _dbContext.users.Where(x => x.IsActive)

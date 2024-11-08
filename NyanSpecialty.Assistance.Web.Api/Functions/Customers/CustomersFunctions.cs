@@ -10,8 +10,6 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
     {
         private readonly ILogger<CustomersFunctions> _logger;
         private ICustomersDataManager _customersDataManager;
-
-
         public CustomersFunctions(ILogger<CustomersFunctions> logger, ICustomersDataManager customersDataManager)
         {
             _logger = logger;

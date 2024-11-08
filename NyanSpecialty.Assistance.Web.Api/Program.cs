@@ -18,18 +18,20 @@ var host = new HostBuilder()
         services.AddDbContext<ApplicationDBContext>(options =>
             options.UseSqlServer(sqlConnection));
 
-        // Register your data managers
-        services.AddSingleton<IVehicleSizeDataManager, VehicleSizeDataManager>();
-        services.AddSingleton<IVehicleClassDataManager, VehicleClassDataManager>();
-        services.AddSingleton<IPolicyTypeDataManager, PolicyTypeDataManager>(); 
-        services.AddSingleton<IPolicyCategoryDataManager, PolicyCategoryDataManager>();
-        services.AddSingleton<IInsurancePolicyDataManager, InsurancePolicyDataManager>();
-        services.AddSingleton<IUserDataManager, UserDataManager>();
-        services.AddSingleton<IAuthenticationDataManager, AuthenticationDataManager>();
-        services.AddSingleton<IServiceProviderDataManager, ServiceProviderDataManager>();
-        services.AddSingleton<IServiceTypeDataManager, ServiceTypeDataManager>();
-        services.AddSingleton<IWorkFlowDataManager, WorkFlowDataManager>();
-        
+        // Register your data managers as scoped
+        services.AddScoped<IVehicleSizeDataManager, VehicleSizeDataManager>();
+        services.AddScoped<IVehicleClassDataManager, VehicleClassDataManager>();
+        services.AddScoped<IPolicyTypeDataManager, PolicyTypeDataManager>();
+        services.AddScoped<IPolicyCategoryDataManager, PolicyCategoryDataManager>();
+        services.AddScoped<IInsurancePolicyDataManager, InsurancePolicyDataManager>();
+        services.AddScoped <IUserDataManager, UserDataManager > ();
+        services.AddScoped<IAuthenticationDataManager, AuthenticationDataManager>();
+        services.AddScoped<IServiceProviderDataManager, ServiceProviderDataManager>();
+        services.AddScoped<IServiceTypeDataManager, ServiceTypeDataManager>();
+        services.AddScoped<IWorkFlowDataManager, WorkFlowDataManager>();
+        services.AddScoped<IRoleDataManagaer, RoleDataManagaer>();
+        services.AddScoped<ICustomersDataManager, CustomersDataManager>();
+
         // Add CORS policy to allow requests from Angular app
         services.AddCors(options =>
         {

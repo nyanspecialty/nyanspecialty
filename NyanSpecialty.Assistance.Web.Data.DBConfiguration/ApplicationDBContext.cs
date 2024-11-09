@@ -25,5 +25,12 @@ namespace NyanSpecialty.Assistance.Web.Data.DBConfiguration
         public DbSet<ServiceType> serviceTypes { get; set; }
         public DbSet<WorkFlow> workFlows { get; set; }
         public DbSet<Role> roles { get; set; }
+        public DbSet<Case> cases { get; set; }
+        public DbSet<CaseStatus> caseStatuses { get; set; }
+        public DbSet<ServiceProviderAssignment> serviceProviderAssignments { get; set; }
+        public DbSet<WorkFlowStep> workFlowSteps { get; set; }
+        public DbSet<ServiceProviderWorkFlow> serviceProviderWorkFlows { get; set; }
+        public DbSet<FaultType> faultTypes { get; set; }
+        public DbSet<Status> statuses { get; set; }
     }
 }

@@ -12,6 +12,7 @@ import { VehicleClassComponent } from './vehicleclass/vehicleclass.component';
 import { UserComponent } from './user/user.component';
 import { RoleComponent } from './role/role.component';
 import { ServiceProviderComponent } from './serviceprovider/serviceprovider.component';
+import { CustomerComponent } from './customer/customer.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -25,5 +26,6 @@ export const routes: Routes = [
   { path: 'serviceprovider', component: ServiceProviderComponent, canActivate: [AuthGuard] },
   { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'roles', component: RoleComponent, canActivate: [AuthGuard] },
+  { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];

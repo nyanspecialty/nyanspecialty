@@ -9,7 +9,6 @@ import { environment } from '../environment';
 export class AuthenticateService {
   private isLoggedInSubject: BehaviorSubject<boolean>;
   isLoggedIn$: Observable<boolean>;
-
   constructor(private repositoryFactory: RepositoryFactory) {
     // Initialize the BehaviorSubject and Observable here
     this.isLoggedInSubject = new BehaviorSubject<boolean>(this.isAuthenticated());

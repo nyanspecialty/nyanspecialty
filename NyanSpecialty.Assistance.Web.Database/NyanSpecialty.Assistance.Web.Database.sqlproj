@@ -73,6 +73,13 @@
     <Build Include="nyanspecialty\Tables\ServiceProvider.sql" />
     <Build Include="nyanspecialty\Tables\ServiceType.sql" />
     <Build Include="nyanspecialty\Tables\WorkFlow.sql" />
+    <Build Include="nyanspecialty\Tables\Status.sql" />
+    <Build Include="nyanspecialty\Tables\FaultTyp.sql" />
+    <Build Include="nyanspecialty\Tables\Case.sql" />
+    <Build Include="nyanspecialty\Tables\CaseStatus.sql" />
+    <Build Include="nyanspecialty\Tables\ServiceProviderAssignment.sql" />
+    <Build Include="nyanspecialty\Tables\WorkFlowSteps.sql" />
+    <Build Include="nyanspecialty\Tables\ServiceProviderWorkFlow.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="nyanspecialty\Post-Deployment\Script.PostDeployment.sql" />

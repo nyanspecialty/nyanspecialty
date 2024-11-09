@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[Case]
+(
+	[CaseId]					bigint			  NOT NULL PRIMARY KEY IDENTITY(1,1),
+	[InsurancePolicyId]			bigint            NULL,
+	[Description]               nvarchar(MAX)     NULL,
+	[CustomerName]              nvarchar(MAX)     NULL,
+	[Phone]                     nvarchar(MAX)     NULL,
+	[Email]                     nvarchar(MAX)     NULL,
+	[CurrentLocation]           nvarchar(MAX)     NULL,
+	[Langitude]                 nvarchar(MAX)     NULL,
+	[Latitude]                  nvarchar(MAX)     NULL,
+	[ServiceTypeId]             bigint            NULL,
+	[StatusId]                  bigint            NULL,
+	[ServiceProviderId]			bigint            NULL,
+	[ServiceRequestDate]        datetimeoffset    NULL,
+    [ResponseTime]              datetimeoffset    NULL,
+    [CompletionTime]			datetimeoffset    NULL,
+    [Rating]					int               NULL, 
+    [Feedback]					nvarchar(MAX)     NULL,
+    [Priority]					int               NULL,
+    [Notes]					    nvarchar(MAX)     NULL, 
+	[CreatedBy]					bigint			  NULL,
+    [CreatedOn]					datetimeoffset	  NULL,
+    [ModifiedBy]				bigint			  NULL,
+    [ModifiedOn]				datetimeoffset    NULL,
+    [IsActive]					bit               NULL
+)

@@ -8,16 +8,16 @@
             (exportWithOriginalDataClicked)="onExportWithOriginalData()"
             [isItemSelected]="isItemSelected"></grid-header>
           </div>
-            <add-edit-user #addEditUserComponent
-                (userRegistrationChange)="handleUserRegistrationChange($event)" (cancel)="onCloseSidebar()"></add-edit-user>
+            <add-edit-customer #addEditCustomerComponent
+                (customerChange)="handleCustomerChange($event)" (cancel)="onCloseSidebar()"></add-edit-customer>
             <app-deleteconfirm *ngIf="showDeleteConfirmModal" (confirm)="confirmDelete()"
                 (cancel)="cancelDelete()" ></app-deleteconfirm>
                 <app-copyconfirm *ngIf="showCopyConfirmModal" (confirm)="confirmCopy()"
                 (cancel)="cancelCopy()" ></app-copyconfirm>
             <div class="card-body card-body-padding">
-                <ngx-datatable class="bootstrap datatable-container bordered-datatable" [rows]="userInfirmation"       [columnMode]="'force'" [rowHeight]="50" [headerHeight]="50" [scrollbarV]="true">
-
-                    <ngx-datatable-column [width]="100" [sortable]="false">
+                <ngx-datatable class="bootstrap datatable-container bordered-datatable" [rows]="customers"
+                    [columnMode]="'force'" [rowHeight]="50" [headerHeight]="50" [scrollbarV]="true">
+                    <ngx-datatable-column [width]="5" [sortable]="false">
                         <ng-template ngx-datatable-header-template>
                             <div class="checkbox-container">
                                 <input type="checkbox" [checked]="isAllChecked()" (change)="toggleAll($event)" />
@@ -30,66 +30,30 @@
                             </div>
                         </ng-template>
                     </ngx-datatable-column>
-                    <!-- First Name Column -->
-                    <ngx-datatable-column name="First Name" prop="firstName">
+                    <ngx-datatable-column name="Name" prop="name">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.firstName }}
+                            {{ row.name }}
                         </ng-template>
                     </ngx-datatable-column>
-                
-                    <!-- Last Name Column -->
-                    <ngx-datatable-column name="Last Name" prop="lastName">
+
+                    <ngx-datatable-column name="Contact Number" prop="contactNumber">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.lastName }}
+                            {{ row.contactNumber }}
                         </ng-template>
                     </ngx-datatable-column>
-                
-                    <!-- Email Column -->
-                    <ngx-datatable-column name="Email" prop="email">
+                    <ngx-datatable-column name="Emailr" prop="email">
                         <ng-template let-row="row" ngx-datatable-cell-template>
                             {{ row.email }}
                         </ng-template>
                     </ngx-datatable-column>
-                
-                    <!-- Phone Column -->
-                    <ngx-datatable-column name="Phone" prop="phone">
+                    <ngx-datatable-column name="Address" prop="address">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.phone }}
+                            {{ row.address }}
                         </ng-template>
                     </ngx-datatable-column>
-                
-                    <!-- Customer ID Column -->
-                    <ngx-datatable-column name="Customer ID" prop="customerId">
+                    <ngx-datatable-column name="Insurance PolicyID" prop="insurancePolicyID">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.customerId }}
-                        </ng-template>
-                    </ngx-datatable-column>
-                
-                    <!-- Provider ID Column -->
-                    <ngx-datatable-column name="Provider ID" prop="providerId">
-                        <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.providerId }}
-                        </ng-template>
-                    </ngx-datatable-column>
-                
-                    <!-- Role ID Column -->
-                    <ngx-datatable-column name="Role ID" prop="roleId">
-                        <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.roleId }}
-                        </ng-template>
-                    </ngx-datatable-column>
-                
-                    <!-- Last Password Changed On Column -->
-                    <ngx-datatable-column name="Last Password Changed" prop="lastPasswordChangedOn">
-                        <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.lastPasswordChangedOn | date }}
-                        </ng-template>
-                    </ngx-datatable-column>
-                
-                    <!-- Is Blocked Column -->
-                    <ngx-datatable-column name="Blocked" prop="isBlocked">
-                        <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.isBlocked ? 'Yes' : 'No' }}
+                            {{ row.insurancePolicyID }}
                         </ng-template>
                     </ngx-datatable-column>
                     <ngx-datatable-column name="CreatedOn" prop="createdOn">

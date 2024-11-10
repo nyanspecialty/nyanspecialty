@@ -10,10 +10,9 @@ var host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
     .ConfigureServices(services =>
     {
-        // Add Application Insights telemetry
+       
         services.AddApplicationInsightsTelemetryWorkerService();
 
-        // Configure your SQL connection
         var sqlConnection = Environment.GetEnvironmentVariable("SqlConnectionString");
         services.AddDbContext<ApplicationDBContext>(options =>
             options.UseSqlServer(sqlConnection));
@@ -24,19 +23,21 @@ var host = new HostBuilder()
         services.AddScoped<IPolicyTypeDataManager, PolicyTypeDataManager>();
         services.AddScoped<IPolicyCategoryDataManager, PolicyCategoryDataManager>();
         services.AddScoped<IInsurancePolicyDataManager, InsurancePolicyDataManager>();
-        services.AddScoped <IUserDataManager, UserDataManager > ();
+        services.AddScoped<IUserDataManager, UserDataManager>();
         services.AddScoped<IAuthenticationDataManager, AuthenticationDataManager>();
         services.AddScoped<IServiceProviderDataManager, ServiceProviderDataManager>();
         services.AddScoped<IServiceTypeDataManager, ServiceTypeDataManager>();
         services.AddScoped<IWorkFlowDataManager, WorkFlowDataManager>();
         services.AddScoped<IRoleDataManagaer, RoleDataManagaer>();
         services.AddScoped<ICustomersDataManager, CustomersDataManager>();
+        services.AddScoped<IFaultTypeDataManager, FaultTypeDataManager>();
+        services.AddScoped<IStatusDataManager, StatusDataManager>();
+  
 
-        // Add CORS policy to allow requests from Angular app
         services.AddCors(options =>
         {
             options.AddDefaultPolicy(builder =>
-                builder.WithOrigins("http://localhost:4200") // Angular app URL
+                builder.WithOrigins("http://localhost:4200")
                        .AllowAnyMethod()
                        .AllowAnyHeader()
             );

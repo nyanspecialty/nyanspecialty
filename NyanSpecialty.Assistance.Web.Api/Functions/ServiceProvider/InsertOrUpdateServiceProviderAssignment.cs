@@ -8,27 +8,28 @@ using NyanSpecialty.Assistance.Web.Models;
 namespace NyanSpecialty.Assistance.Web.Api.Functions
 {
     public partial class ServiceProviderFunction
-    {         
-        [Function("SaveServiceProvider")]
-        public async Task<IActionResult> SaveServiceProvider([HttpTrigger(AuthorizationLevel.Function, "post", 
-            Route ="serviceprovider/saveserviceprovider")] HttpRequest req)
+    {
+        
+        [Function("InsertOrUpdateServiceProviderAssignment")]
+        public async Task<IActionResult> InsertOrUpdateServiceProviderAssignment([HttpTrigger(AuthorizationLevel.Function,"post",
+            Route = "serviceprovider/insertorupdateserviceproviderassignment")] HttpRequest req)
         {
-            _logger.LogInformation("ServiceProviderFunction.SaveServiceProvider Invoked");
+            _logger.LogInformation("ServiceProviderFunction.InsertOrUpdateServiceProviderAssignment Invoked");
             try
             {
                 if (req.Body == null)
                     return new BadRequestObjectResult("valid provider object NOT provided");
 
-                string requestBody= await new StreamReader(req.Body).ReadToEndAsync();
+                string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
                 if (requestBody == null)
                     return new BadRequestObjectResult("valid provider object NOT provided");
 
-                var serviceProvider = JsonConvert.DeserializeObject<ServiceProvider>(requestBody);
+                var serviceProvider = JsonConvert.DeserializeObject<ServiceProviderAssignment>(requestBody);
 
                 if (serviceProvider == null)
                     return new BadRequestObjectResult("valid provider object NOT provided");
 
-                var response = await _serviceProviderDataManager.InsertOrUpdateServiceProviderAsync(serviceProvider);
+                var response = await _serviceProviderDataManager.InsertOrUpdateServiceProviderAssignmentAsync(serviceProvider);
                 return new OkObjectResult(response);
             }
             catch (Exception ex)

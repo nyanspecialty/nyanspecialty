@@ -12,5 +12,8 @@ namespace NyanSpecialty.Assistance.Web.Data.Manager
         Task<ServiceProvider> InsertOrUpdateServiceProviderAsync(ServiceProvider ServiceProvider);
         Task<List<ServiceProvider>> GetServiceProvidersAsync();
         Task<ServiceProvider> GetServiceProviderAsync(string searchInput);
+        Task<List<ServiceProviderWorkFlowDetails>> GetServiceProviderWorkFlowDetailsAsync();
+        Task<ServiceProviderWorkFlowDetails> GetServiceProviderWorkFlowDetailsAsync(long providerId);
+        Task<ServiceProviderAssignment> InsertOrUpdateServiceProviderAssignmentAsync(ServiceProviderAssignment serviceProviderAssignment);
     }
 }

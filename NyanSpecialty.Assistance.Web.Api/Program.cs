@@ -10,7 +10,7 @@ var host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
     .ConfigureServices(services =>
     {
-       
+
         services.AddApplicationInsightsTelemetryWorkerService();
 
         var sqlConnection = Environment.GetEnvironmentVariable("SqlConnectionString");
@@ -32,7 +32,7 @@ var host = new HostBuilder()
         services.AddScoped<ICustomersDataManager, CustomersDataManager>();
         services.AddScoped<IFaultTypeDataManager, FaultTypeDataManager>();
         services.AddScoped<IStatusDataManager, StatusDataManager>();
-  
+        services.AddScoped<ICaseDataManager, CaseDataManager>();
 
         services.AddCors(options =>
         {

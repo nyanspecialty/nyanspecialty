@@ -11,7 +11,7 @@ export class WorkflowService {
   constructor(private repositoryFactory: RepositoryFactory) { }
 
   insertOrUpdateWorkflowAsync(workflow: any): Observable<any> {
-    return this.repositoryFactory.sendAsync('POST', environment.UrlConstants.SaveWorkflow, workflow);
+    return this.repositoryFactory.sendAsync('POST', environment.UrlConstants.SaveWorkFlow, workflow);
   }
   fetchWorkflowsAsync(): Observable<any> {
     return this.repositoryFactory.sendAsync('GET', environment.UrlConstants.GetWorkflows);

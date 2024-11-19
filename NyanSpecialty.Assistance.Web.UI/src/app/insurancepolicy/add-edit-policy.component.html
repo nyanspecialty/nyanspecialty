@@ -1,0 +1,205 @@
+<form id="AddEditInsurancePolicyForm" (ngSubmit)="onSubmit()">
+    <div class="sidebar" id="sidebar" [ngClass]="{'show': isSidebarVisible}">
+        <div class="modal-header">
+            <h5 class="modal-title">Add/Edit Insurance Policy</h5>
+            <button type="button" class="close" (click)="closeSidebar()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="customerName">Name</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="customerName" placeholder="Enter name" required
+                            [(ngModel)]="insurancePolicy.customerName" name="customerName">
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="customerLifetimeValue">Lifetime Value</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="customerLifetimeValue"
+                            placeholder="Enter customerLifetimeValue" required
+                            [(ngModel)]="insurancePolicy.customerLifetimeValue" name="customerLifetimeValue">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="gender">Gender</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="gender" [(ngModel)]="insurancePolicy.gender"
+                            name="gender" placeholder="Select a gender">
+                            <option value="" disabled>Select a gender</option>
+                            <option value="M">Male</option>
+                            <option value="F">FeMale</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="maritalStatus">Marital Status</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="maritalStatus"
+                            [(ngModel)]="insurancePolicy.maritalStatus" name="maritalStatus"
+                            placeholder="Select a maritals status">
+                            <option value="" disabled>Select a maritals status</option>
+                            <option *ngFor="let marital of maritalStatus" [value]="marital.name">{{ marital.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="customerEmail">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="customerEmail" placeholder="Enter email" required
+                            [(ngModel)]="insurancePolicy.customerEmail" name="customerEmail">
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="customerPhone">Phone</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="customerPhone" placeholder="Enter phone" required
+                            [(ngModel)]="insurancePolicy.customerPhone" name="customerPhone">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="education">Education</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="education"
+                            [(ngModel)]="insurancePolicy.education" name="education" placeholder="Select a education">
+                            <option value="" disabled>Select a education</option>
+                            <option *ngFor="let edu of educations" [value]="edu.name">{{ edu.name }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="employmentStatus">Employement</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="employmentStatus"
+                            [(ngModel)]="insurancePolicy.employmentStatus" name="employmentStatus"
+                            placeholder="Select a employment">
+                            <option value="" disabled>Select a employment</option>
+                            <option *ngFor="let employment of employementStatuses" [value]="employment.name">{{
+                                employment.name }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="carRegistrationNo">Car Registration</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-car"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="vin" placeholder="Enter Registration" required
+                            [(ngModel)]="insurancePolicy.carRegistrationNo" name="carRegistrationNo">
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="vin">VIN</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="vin" placeholder="Enter vin" required
+                            [(ngModel)]="insurancePolicy.vin" name="vin">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-6">
+                    <label for="vehicleClass">Vehicle Class</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="vehicleClass"
+                            [(ngModel)]="insurancePolicy.vehicleClass" name="vehicleClass"
+                            placeholder="Select a vehicle class">
+                            <option value="" disabled selected>Select a Vehicle Class</option>
+                            <option *ngFor="let vehicle of vehicleClasses" [value]="vehicle.name">{{ vehicle.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="vehicleSize">Vehicle Size</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="vehicleSize"
+                            [(ngModel)]="insurancePolicy.vehicleSize" name="vehicleSize"
+                            placeholder="Select a vehicle size">
+                            <option value="" disabled>Select a Vehicle size</option>
+                            <option *ngFor="let vsize of vehicleSizes" [value]="vsize.name">{{ vsize.name }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group col-6">
+                    <label for="coverage">Coverage</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="coverage" [(ngModel)]="insurancePolicy.coverage"
+                            name="coverage" placeholder="Select a coverage">
+                            <option value="" disabled>Select a coverage</option>
+                            <option *ngFor="let coverage of coverages" [value]="coverage.name">{{ coverage.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="income">income</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="income" placeholder="Enter income" required
+                            [(ngModel)]="insurancePolicy.income" name="income">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>

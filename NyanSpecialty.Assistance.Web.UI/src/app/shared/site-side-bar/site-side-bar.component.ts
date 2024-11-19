@@ -55,4 +55,7 @@ export class SiteSideBarComponent implements OnInit {
   customerClick() {
     this.router.navigate(['/customer']);
   }
+  insurencePolicyClick() {
+    this.router.navigate(['/insurencepolicy']);
+  }
 }

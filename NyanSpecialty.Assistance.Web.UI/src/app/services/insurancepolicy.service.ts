@@ -10,10 +10,13 @@ export class InsurancePolicyService {
 
   constructor(private repositoryFactory: RepositoryFactory) { }
 
-  insertOrUpdateInsurancePolicyAsync(role: any): Observable<any> {
-    return this.repositoryFactory.sendAsync('POST', environment.UrlConstants.SaveInsurancePolicy, role);
+  insertOrUpdateInsurancePolicyAsync(policy: any): Observable<any> {
+    return this.repositoryFactory.sendAsync('POST', environment.UrlConstants.SaveInsurancePolicy, policy);
   }
   fetchInsurancePolicysAsync(): Observable<any> {
     return this.repositoryFactory.sendAsync('GET', environment.UrlConstants.GetInsurancePolicies);
+  }
+  fetchInsurancePolicyDetailssAsync(insurancepolicyid:any): Observable<any> {
+    return this.repositoryFactory.sendAsync('GET',`${environment.UrlConstants.GetInsurancePolicyById}/${insurancepolicyid}`);
   }
 }

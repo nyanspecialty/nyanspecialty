@@ -1,5 +1,5 @@
 export interface Workflow {
-    workFLowId: number;
+    workFlowId: number;
     name: string;
     code: string;
     createdBy?: number;

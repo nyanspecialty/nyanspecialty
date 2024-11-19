@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.component';
 import { RoleComponent } from './role/role.component';
 import { ServiceProviderComponent } from './serviceprovider/serviceprovider.component';
 import { CustomerComponent } from './customer/customer.component';
+import { InsurancePolicyComponent } from './insurancepolicy/insurancepolicy.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -27,5 +28,6 @@ export const routes: Routes = [
   { path: 'users', component: UserComponent, canActivate: [AuthGuard] },
   { path: 'roles', component: RoleComponent, canActivate: [AuthGuard] },
   { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
+  { path: 'insurencepolicy', component: InsurancePolicyComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];

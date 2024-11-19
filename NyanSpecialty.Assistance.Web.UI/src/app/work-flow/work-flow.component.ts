@@ -108,7 +108,7 @@ export class WorkFlowComponent implements OnInit {
   }
   confirmCopy() {
     this.loaderSerivce.showLoader();
-    this.selectedWorkFlow.workFLowId = 0;
+    this.selectedWorkFlow.workFlowId = 0;
     this.insertOrUpdateWorkFlowAsync(this.commonPropsService.prepareModelForSave(this.selectedWorkFlow), false, false, true, false);
   }
   cancelCopy() {
@@ -153,7 +153,7 @@ export class WorkFlowComponent implements OnInit {
     } else {
       this.isItemSelected = false;
       this.selectedWorkFlow = {} as Workflow;
-      this.selectedItems = this.selectedItems.filter(item => item.workFLowId !== row.workFLowId);
+      this.selectedItems = this.selectedItems.filter(item => item.workFlowId !== row.workFlowId);
     }
   }
 
@@ -162,7 +162,7 @@ export class WorkFlowComponent implements OnInit {
   }
   addOrUpdateWorkflows(items: Workflow[]): void {
     items.forEach(item => {
-      const index = this.selectedItems.findIndex(existingItem => existingItem.workFLowId === item.workFLowId);
+      const index = this.selectedItems.findIndex(existingItem => existingItem.workFlowId === item.workFlowId);
       if (index !== -1) {
         this.selectedItems[index] = { ...this.selectedItems[index], ...item };
       } else {
@@ -173,8 +173,8 @@ export class WorkFlowComponent implements OnInit {
   handleWorkflowChange(workflow: Workflow) {
     console.log(workflow);
     this.loaderSerivce.showLoader();
-    const isAdd = workflow.workFLowId === 0;
-    const isUpdate = workflow.workFLowId > 0;
+    const isAdd = workflow.workFlowId === 0;
+    const isUpdate = workflow.workFlowId > 0;
     workflow.isActive = true;
     this.insertOrUpdateWorkFlowAsync(this.commonPropsService.prepareModelForSave(workflow), isAdd, isUpdate, false, false);
 

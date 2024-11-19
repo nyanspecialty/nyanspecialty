@@ -23,7 +23,7 @@ export class AddEditWorkflowComponent implements OnInit {
 
   ngOnInit() {
     if (!this.workflow) {
-      this.workflow = { workFLowId: 0, name: '', code: '', createdOn: new Date(), modifiedOn: new Date(), isActive: true };
+      this.workflow = { workFlowId: 0, name: '', code: '', createdOn: new Date(), modifiedOn: new Date(), isActive: true };
     }
   }
 
@@ -46,7 +46,7 @@ export class AddEditWorkflowComponent implements OnInit {
     this.resetForm();
   }
   resetForm() {
-    this.workflow = { workFLowId: 0, name: '', code: '', createdOn: new Date(), modifiedOn: new Date(), isActive: true };
+    this.workflow = { workFlowId: 0, name: '', code: '', createdOn: new Date(), modifiedOn: new Date(), isActive: true };
   }
   onSubmit() {
     console.log('Form submitted', this.workflow);

@@ -36,10 +36,12 @@
               "node_modules/@swimlane/ngx-datatable/themes/material.scss",
               "node_modules/@swimlane/ngx-datatable/themes/bootstrap.scss",
               "node_modules/@swimlane/ngx-datatable/themes/dark.scss",
-              "node_modules/@swimlane/ngx-datatable/assets/icons.css"
+              "node_modules/@swimlane/ngx-datatable/assets/icons.css",
+              "node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+               "node_modules/leaflet/dist/leaflet.js"
             ]
           },
           "configurations": {

@@ -9,13 +9,13 @@ namespace NyanSpecialty.Assistance.Web.Models
         [Key]
         public long CaseId { get; set; }
         public long? InsurancePolicyId { get; set; }
-        public string Description { get; set; }
-        public string CustomerName { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public string CurrentLocation { get; set; }
-        public string Langitude { get; set; }
-        public string Latitude { get; set; }
+        public string? Description { get; set; }
+        public string? CustomerName { get; set; }
+        public string? Phone { get; set; }
+        public string? Email { get; set; }
+        public string? CurrentLocation { get; set; }
+        public string? Langitude { get; set; }
+        public string? Latitude { get; set; }
         public long? ServiceTypeId { get; set; }
         public long? StatusId { get; set; }
         public long? ServiceProviderId { get; set; }
@@ -23,9 +23,9 @@ namespace NyanSpecialty.Assistance.Web.Models
         public DateTimeOffset? ResponseTime { get; set; }
         public DateTimeOffset? CompletionTime { get; set; }
         public int? Rating { get; set; }
-        public string Feedback { get; set; }
+        public string? Feedback { get; set; }
         public int? Priority { get; set; }
-        public string Notes { get; set; }
+        public string? Notes { get; set; }
       
     }
 }

@@ -19,9 +19,9 @@ namespace NyanSpecialty.Assistance.Web.Api.Functions
                 var data = await _caseDataManager.GetCaseDetailAsync();
                 return new OkObjectResult(data);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                _logger.LogError("error while retrieving case details");
+                _logger.LogError(ex.Message);
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
             }
         }

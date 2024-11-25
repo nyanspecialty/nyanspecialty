@@ -35,6 +35,7 @@ import { RoleService } from './services/role.service';
 import { AddEditRoleComponent } from './role/add-edit-role.component';
 import { ServiceProviderService } from './services/serviceprovider.service';
 import { AddEditPolicyComponent } from './insurancepolicy/add-edit-policy.component';
+import { CaseService } from './services/case.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,7 @@ import { AddEditPolicyComponent } from './insurancepolicy/add-edit-policy.compon
   providers: [AuthenticateService, RepositoryFactory, TokenService, LoaderService,
     ServiceTypeService, PolicyCategoryService, CommonPropsService, PolicyTypeService,
     VehicleClassService, CustomerService, InsurancePolicyService, RoleService, UserService,
-    ServiceProviderService
+    ServiceProviderService,CaseService
   ],
   bootstrap: [AppComponent]
 })

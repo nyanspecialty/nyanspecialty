@@ -7,61 +7,75 @@ export const environment = {
         Authenticate: 'useraccess/authenticateuser',
         VerifyAccessToken: 'useraccess/verifyaccestoken',
         GenerateUserClaims: 'useraccess/genarateuserclaims',
-    
+
         // Customers
         GetCustomers: 'customers/getcustomers',
         GetCustomersById: 'customers/getcustomersbyid',
         SaveCustomers: 'customers/savecustomers',
-    
+
         // Insurance Policies
         GetInsurancePolicies: 'insurancepolicy/getinsurancepolicies',
         GetInsurancePolicyById: 'insurancepolicy/getinsurancepolicy',
         SaveInsurancePolicy: 'insurancepolicy/saveinsurancepolicy',
         UploadInsurancePolicies: 'insurancepolicy/uploadinsurancepolicies',
-    
+
         // Policy Categories
         GetPolicyCategories: 'policycategory/getpolicycategories',
         GetPolicyCategoryById: 'policycategory/getpolicycategoriesbyid',
         SavePolicyCategory: 'policycategory/savepolicycategory',
-    
+
         // Policy Types
         GetPolicyTypes: 'policytype/getpolicytypes',
         GetPolicyTypeById: 'policytype/getpolicytypebyid',
         SavePolicyType: 'policttype/savepolicyType',
-    
+
         // Vehicle Classes
         GetVehicleClasses: 'vehicleclass/getvehicleclasses',
         GetVehicleClassById: 'vehicleclass/getvehicleclassbyid/{vehicleClassId}',
         SaveVehicleClass: 'vehicleclass/savevehicleclass',
-    
+
         // Vehicle Sizes
         GetVehicleSizes: 'vehiclesize/getvehiclesizes',
         GetVehicleSizeById: 'vehiclesize/getvehiclesizebyid/{vehiclesizeid}',
         SaveVehicleSize: 'vehiclesize/savevehiclesize',
-    
+
         // Service Types
         GetServiceTypes: 'servicetype/getallservicetypes',
         GetServiceType: 'servicetype/getservicetypebyid',
         SaveServiceType: 'servicetype/saveservicetype',
 
-         // Workflow
-         GetWorkflows: 'workflow/getallworkflows',
-         GetWorkFlowById: 'workflow/getworkflowbyid',
-         SaveWorkFlow: 'workflow/saveworkflow',
+        // Workflow
+        GetWorkflows: 'workflow/getallworkflows',
+        GetWorkFlowById: 'workflow/getworkflowbyid',
+        SaveWorkFlow: 'workflow/saveworkflow',
 
-          //Role
+        //Role
         GetRoles: 'role/getroles',
         SaveRole: 'role/saverole',
 
         //Service Providers
         GetAllServiceProviders: 'serviceprovider/getallserviceproviders',
         GetServiceProvider: 'serviceprovider/getserviceprovider',
-        SaveServiceProvider:'serviceprovider/saveserviceprovider',
+        SaveServiceProvider: 'serviceprovider/saveserviceprovider',
+        InsertOrUpdateServiceProviderAssignment: 'serviceprovider/insertorupdateserviceproviderassignment',
+        GetServiceProviderWorkFlowDetails: 'serviceprovider/getserviceproviderworkflowdetails',
+        GetServiceProviderWorkFlowDetailsByProvider: 'serviceprovider/getserviceproviderworkflowdetailsbyprovider',
 
-         //Service Providers
-         GetUsers: 'user/getusers',
-         GetUserById: 'user/getuserbyid',
-         SaveUser:'user/saveuser'
+        //Service Providers
+        GetUsers: 'user/getusers',
+        GetUserById: 'user/getuserbyid',
+        SaveUser: 'user/saveuser',
+
+        // Insurance Policy Cases
+        GetCaseDetails: 'insurancepolicycase/getcasedetails',
+        GetCaseDetailsByCaseId: 'insurancepolicycase/getcasedetailsbycaseid',
+        InsertOrUpdateCase: 'insurancepolicycase/insertorupdatecase',
+        CaseStatusProcess: 'insurancepolicycase/casestatusprocess',
+
+         // Statuses
+        GetStatuses: 'status/getstatuses',
+        GetStatusById: 'status/getstatusbyid',
+        SaveStatus: 'status/savestatus'
 
     },
     Messages: {

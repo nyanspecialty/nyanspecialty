@@ -14,6 +14,7 @@ import { RoleComponent } from './role/role.component';
 import { ServiceProviderComponent } from './serviceprovider/serviceprovider.component';
 import { CustomerComponent } from './customer/customer.component';
 import { InsurancePolicyComponent } from './insurancepolicy/insurancepolicy.component';
+import { CaselistComponent } from './casemanagement/caselist.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -29,5 +30,6 @@ export const routes: Routes = [
   { path: 'roles', component: RoleComponent, canActivate: [AuthGuard] },
   { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard] },
   { path: 'insurencepolicy', component: InsurancePolicyComponent, canActivate: [AuthGuard] },
+  { path: 'insurencecase', component: CaselistComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' }
 ];

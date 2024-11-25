@@ -1,0 +1,172 @@
+<form id="AddEditInsuranceCaseForm" (ngSubmit)="onSubmit()">
+    <div class="sidebar" id="sidebar" [ngClass]="{'show': isSidebarVisible}">
+        <div class="modal-header">
+            <h5 class="modal-title">Add/Edit Case Details</h5>
+            <button type="button" class="close" (click)="closeSidebar()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-row">
+
+                <div class="form-group col-12">
+                    <label for="insurancePolicyId">Select policy holder</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-id-card"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="insurancePolicyId"
+                            [(ngModel)]="caseDetails.insurancePolicyId" name="insurancePolicyId"
+                            placeholder="Select a policy holder" (change)="verifyInsuranceDetails($event)">
+                            <option value="" disabled selected>Select a policy holder</option>
+                            <option *ngFor="let policy of coreInsurencePolycies" [value]="policy.insurancePolicyId">{{
+                                policy.customerName }}-{{ policy.policyReference
+                                }}-{{policy.policyType}}-{{policy.policy}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="customerName">Name</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="customerName" placeholder="Enter name" required disabled
+                            [(ngModel)]="caseDetails.customerName" name="customerName">
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="email" placeholder="Enter name" required disabled
+                            [(ngModel)]="caseDetails.email" name="email">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="phone">Phone</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="phone" placeholder="Enter phone" required disabled
+                            [(ngModel)]="caseDetails.phone" name="phone">
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="currentLocation">Location</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-map"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="currentLocation" placeholder="Enter currentLocation"
+                            required [(ngModel)]="caseDetails.currentLocation" name="currentLocation">
+                            <div class="input-group-prepend" style="border-right:1px solid #afb4ba; cursor: pointer;" id="mapMarkerIcon" (click)="openMapModal()">
+                                <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                            </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="langitude">langitude</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-map"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="phone" placeholder="1.00191" required disabled
+                            [(ngModel)]="caseDetails.langitude" name="langitude">
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="latitude">latitude</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-map"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="latitude" placeholder="1.9999" disabled
+                            required [(ngModel)]="caseDetails.latitude" name="latitude">
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="serviceTypeId">Serice Type</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="serviceTypeId"
+                            [(ngModel)]="caseDetails.serviceTypeId" name="serviceTypeId"
+                            placeholder="Select a policy holder">
+                            <option value="" disabled selected>Select a policy holder</option>
+                            <option *ngFor="let service of serviceTypes" [value]="service.serviceTypeId">{{
+                                service.serviceName }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-6">
+                    <label for="serviceTypeId">Serice Type</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                        </div>
+                        <select class="form-control custom-select" id="priority"
+                            [(ngModel)]="caseDetails.priority" name="priority"
+                            placeholder="Select a priority">
+                            <option value="" disabled selected>Select a priority</option>
+                            <option *ngFor="let prioriti of priorityTypes" [value]="prioriti.priorityTypeId">{{
+                                prioriti.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row" style="width: 100%;">
+                    <div class="form-group col-12">
+                        <label for="description">Description</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-map"></i></span>
+                            </div>
+                            <textarea class="form-control" id="description" placeholder="1.00191" rows="3" 
+                            [(ngModel)]="caseDetails.description" name="description"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+
+        </div>
+        <div class="modal-footer">
+            <button type="submit" id="btnsubmit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+
+
+<div id="mapModal" class="modal fade show" [ngClass]="{ 'show': isMapModalVisible }">
+    <div class="modal-content modal-lg">
+      <span class="close" (click)="closeMapModal()">&times;</span>
+      <input
+        type="text"
+        id="searchBox"
+        placeholder="Search for a location..."
+        (keyup.enter)="searchLocation()"
+        [(ngModel)]="searchQuery"
+      />
+      <div id="map" style="height: 400px; width: 100%;"></div>
+      <button (click)="confirmLocation()">Confirm Location</button>
+    </div>
+  </div>

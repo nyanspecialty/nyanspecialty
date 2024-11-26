@@ -215,4 +215,16 @@ export class CaselistComponent implements OnInit {
       this.loaderService.hideLoader();
     });
   }
+  getPriorityLabel(priority: number): string {
+    switch (priority) {
+      case 1:
+        return 'High';
+      case 2:
+        return 'Medium';
+      case 3:
+        return 'Low';
+      default:
+        return 'Unknown';
+    }
+  }
 }

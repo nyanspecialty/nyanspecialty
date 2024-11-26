@@ -1,23 +1,23 @@
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
-          <div class="card-header">
-            <grid-header (addClicked)="onAdd()" (editClicked)="onEdit()" (deleteClicked)="onDelete()"
-            (copyClicked)="onCopy()" (importClicked)="onImport()" (exportTemplateClicked)="onExportTemplate()"
-            (exportWithGridDataClicked)="onExportWithGridData()"
-            (exportWithOriginalDataClicked)="onExportWithOriginalData()"
-            [isItemSelected]="isItemSelected"></grid-header>
-          </div>
-            <app-caseaddedit #addEditCaseComponent
-                (caseChange)="handleCaseChange($event)" (cancel)="onCloseSidebar()"></app-caseaddedit>
+            <div class="card-header">
+                <grid-header (addClicked)="onAdd()" (editClicked)="onEdit()" (deleteClicked)="onDelete()"
+                    (copyClicked)="onCopy()" (importClicked)="onImport()" (exportTemplateClicked)="onExportTemplate()"
+                    (exportWithGridDataClicked)="onExportWithGridData()"
+                    (exportWithOriginalDataClicked)="onExportWithOriginalData()"
+                    [isItemSelected]="isItemSelected"></grid-header>
+            </div>
+            <app-caseaddedit #addEditCaseComponent (caseChange)="handleCaseChange($event)"
+                (cancel)="onCloseSidebar()"></app-caseaddedit>
             <app-deleteconfirm *ngIf="showDeleteConfirmModal" (confirm)="confirmDelete()"
-                (cancel)="cancelDelete()" ></app-deleteconfirm>
-                <app-copyconfirm *ngIf="showCopyConfirmModal" (confirm)="confirmCopy()"
-                (cancel)="cancelCopy()" ></app-copyconfirm>
+                (cancel)="cancelDelete()"></app-deleteconfirm>
+            <app-copyconfirm *ngIf="showCopyConfirmModal" (confirm)="confirmCopy()"
+                (cancel)="cancelCopy()"></app-copyconfirm>
             <div class="card-body card-body-padding">
                 <ngx-datatable class="bootstrap datatable-container bordered-datatable" [rows]="dbInsuranceCases"
                     [columnMode]="'force'" [rowHeight]="50" [headerHeight]="50" [scrollbarV]="true">
-                    <ngx-datatable-column [width]="5" [sortable]="false">
+                    <ngx-datatable-column [width]="100" [sortable]="false">
                         <ng-template ngx-datatable-header-template>
                             <div class="checkbox-container">
                                 <input type="checkbox" [checked]="isAllChecked()" (change)="toggleAll($event)" />
@@ -53,12 +53,17 @@
                     </ngx-datatable-column>
                     <ngx-datatable-column name="Location" prop="caseDetails.currentLocation">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.caseDetails.currentLocation }}/ {{ row.caseDetails.langitude }}/{{ row.caseDetails.latitude }}
+                            {{ row.caseDetails.currentLocation }}/ {{ row.caseDetails.langitude }}/{{
+                            row.caseDetails.latitude }}
                         </ng-template>
                     </ngx-datatable-column>
                     <ngx-datatable-column name="Priority" prop="caseDetails.priority">
                         <ng-template let-row="row" ngx-datatable-cell-template>
-                            {{ row.caseDetails.priority }}
+                            <i class="fa" [ngClass]="{
+                                'fa-exclamation-circle red-flash': row.caseDetails.priority === 1,
+                                'fa-exclamation-triangle orange-flash': row.caseDetails.priority === 2,
+                                'fa-info-circle blue-flash': row.caseDetails.priority === 3
+                            }"  [title]="getPriorityLabel(row.caseDetails.priority)"></i>
                         </ng-template>
                     </ngx-datatable-column>
                     <ngx-datatable-column name="CreatedOn" prop="caseDetails.createdOn">
@@ -83,7 +88,7 @@
                             {{ row.caseDetails.isActive ? 'Yes' : 'No' }}
                         </ng-template>
                     </ngx-datatable-column>
-                   
+
                 </ngx-datatable>
 
 

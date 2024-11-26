@@ -48,6 +48,9 @@ export class AddEditCaseComponent implements OnInit, AfterViewInit {
     private serviceTypeService: ServiceTypeService) { }
 
   ngOnInit() {
+    if (!this.caseDetails) {
+      this.resetForm();
+    }
     this.loadMainData();
   }
   ngAfterViewInit() {
@@ -84,6 +87,7 @@ export class AddEditCaseComponent implements OnInit, AfterViewInit {
 
   closeSidebar() {
     this.cancel.emit();
+    this.resetForm();
   }
   hideSideBar() {
     this.isSidebarVisible = false;
@@ -207,19 +211,19 @@ export class AddEditCaseComponent implements OnInit, AfterViewInit {
   }
   verifyInsuranceDetails(event: any) {
     if (this.caseDetails.insurancePolicyId) {
-        const insurancePolicyId = Number(this.caseDetails.insurancePolicyId);
-        if (!isNaN(insurancePolicyId)) {
-            const policyDetails = this.coreInsurencePolycies.find(x => x.insurancePolicyId === insurancePolicyId);
-            if (policyDetails) {
-                this.caseDetails.customerName = policyDetails.customerName;
-                this.caseDetails.phone = policyDetails.customerPhone;
-                this.caseDetails.email = policyDetails.customerEmail;
-            } else {
-                console.warn('No policy found with the ID:', insurancePolicyId);
-            }
+      const insurancePolicyId = Number(this.caseDetails.insurancePolicyId);
+      if (!isNaN(insurancePolicyId)) {
+        const policyDetails = this.coreInsurencePolycies.find(x => x.insurancePolicyId === insurancePolicyId);
+        if (policyDetails) {
+          this.caseDetails.customerName = policyDetails.customerName;
+          this.caseDetails.phone = policyDetails.customerPhone;
+          this.caseDetails.email = policyDetails.customerEmail;
         } else {
-            console.error('Invalid insurancePolicyId:', this.caseDetails.insurancePolicyId);
+          console.warn('No policy found with the ID:', insurancePolicyId);
         }
+      } else {
+        console.error('Invalid insurancePolicyId:', this.caseDetails.insurancePolicyId);
+      }
     }
-}
+  }
 }

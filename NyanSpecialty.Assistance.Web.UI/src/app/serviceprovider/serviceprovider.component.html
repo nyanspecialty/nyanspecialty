@@ -18,7 +18,7 @@
             <div class="card-body card-body-padding">
                 <ngx-datatable class="bootstrap datatable-container bordered-datatable" [rows]="serviceProviders"
                     [columnMode]="'force'" [rowHeight]="50" [headerHeight]="50" [scrollbarV]="true">
-                    <ngx-datatable-column [width]="5" [sortable]="false">
+                    <ngx-datatable-column [width]="100"  [sortable]="false">
                         <ng-template ngx-datatable-header-template>
                             <div class="checkbox-container">
                                 <input type="checkbox" [checked]="isAllChecked()" (change)="toggleAll($event)" />

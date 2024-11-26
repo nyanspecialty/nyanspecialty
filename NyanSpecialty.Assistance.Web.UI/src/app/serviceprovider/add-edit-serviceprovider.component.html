@@ -37,10 +37,16 @@
             <div class="form-group">
                 <label for="address">Address</label>
                 <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-map"></i></span>
+                        </div>
+                        <input type="text" class="form-control" id="address" placeholder="Enter currentLocation"
+                            required [(ngModel)]="serviceProvider.address" name="address">
+                            <div class="input-group-prepend" style="border-right:1px solid #afb4ba; cursor: pointer;" id="mapMarkerIcon" (click)="openMapModal()">
+                                <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                            </div>
                     </div>
-                    <input type="text" class="form-control" id="address" placeholder="Enter address" required [(ngModel)]="serviceProvider.address" name="email">
                 </div>
             </div>
             <div class="form-group">
@@ -49,7 +55,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="serviceArea" placeholder="Enter service area" required [(ngModel)]="serviceProvider.serviceArea" name="serviceArea">
+                    <input type="text" class="form-control" id="serviceArea" placeholder="Enter service area" required [(ngModel)]="serviceProvider.serviceArea" disabled name="serviceArea">
                 </div>
             </div>
             <div class="form-group">
@@ -58,7 +64,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="latitude" placeholder="Enter latitude" required [(ngModel)]="serviceProvider.latitude" name="email">
+                    <input type="text" class="form-control" id="latitude" placeholder="Enter latitude" required [(ngModel)]="serviceProvider.latitude" disabled name="email">
                 </div>
             </div>
             <div class="form-group">
@@ -67,7 +73,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-qrcode"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="longitude" placeholder="Enter longitude" required [(ngModel)]="serviceProvider.longitude" name="email">
+                    <input type="text" class="form-control" id="longitude" placeholder="Enter longitude" required [(ngModel)]="serviceProvider.longitude" disabled name="email">
                 </div>
             </div>
         </div>
@@ -76,3 +82,18 @@
         </div>
     </div>
 </form>
+
+<div id="mapModal" class="modal fade show" [ngClass]="{ 'show': isMapModalVisible }">
+    <div class="modal-content modal-lg">
+      <span class="close" (click)="closeMapModal()">&times;</span>
+      <input
+        type="text"
+        id="searchBox"
+        placeholder="Search for a location..."
+        (keyup.enter)="searchLocation()"
+        [(ngModel)]="searchQuery"
+      />
+      <div id="map" style="height: 400px; width: 100%;"></div>
+      <button (click)="confirmLocation()">Confirm Location</button>
+    </div>
+  </div>
